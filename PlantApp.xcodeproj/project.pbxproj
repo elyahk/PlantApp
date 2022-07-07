@@ -14,6 +14,7 @@
 		80AC9F6C28757284006BC246 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9F6B28757284006BC246 /* Constants.swift */; };
 		80AC9F6E2875A53E006BC246 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9F6D2875A53E006BC246 /* SignUpViewController.swift */; };
 		CE8AAF7A2876CC6F0099D325 /* LoginPageViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AAF792876CC6F0099D325 /* LoginPageViewController2.swift */; };
+		CE8AAF7D2876FC830099D325 /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = CE8AAF7C2876FC830099D325 /* SkyFloatingLabelTextField */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8AAF7D2876FC830099D325 /* SkyFloatingLabelTextField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +88,9 @@
 			dependencies = (
 			);
 			name = PlantApp;
+			packageProductDependencies = (
+				CE8AAF7C2876FC830099D325 /* SkyFloatingLabelTextField */,
+			);
 			productName = PlantApp;
 			productReference = 2CDF1DA72874960900F0BC12 /* PlantApp.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 2CDF1D9E2874960900F0BC12;
+			packageReferences = (
+				CE8AAF7B2876FC830099D325 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */,
+			);
 			productRefGroup = 2CDF1DA82874960900F0BC12 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -354,6 +362,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE8AAF7B2876FC830099D325 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Skyscanner/SkyFloatingLabelTextField.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE8AAF7C2876FC830099D325 /* SkyFloatingLabelTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE8AAF7B2876FC830099D325 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */;
+			productName = SkyFloatingLabelTextField;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2CDF1D9F2874960900F0BC12 /* Project object */;
 }
