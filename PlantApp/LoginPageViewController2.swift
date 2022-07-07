@@ -265,15 +265,23 @@ class LoginPageViewController2: UIViewController {
     }
     
     @objc func loginButtonTapped() {
-        if nameTextField.text != nil && passwordTextField.text != nil {
+        if nameTextField.text != "" && passwordTextField.text != ""  && checkbox.currentImage != nil {
              let vc = mainViewController()
             vc.modalTransitionStyle = .flipHorizontal
             vc.modalPresentationStyle = .fullScreen
             vc.mainLabel.text = "Hello \(String(describing: nameTextField.text!))"
             present(vc, animated: true)
+        } else {
+            showAlert()
         }
+        
     }
-    
+    func showAlert() {
+        let alert = UIAlertController(title: "Eror", message: "please check the checkbox and write somethink", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
     
 }
 
