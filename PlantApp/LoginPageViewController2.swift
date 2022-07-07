@@ -60,7 +60,7 @@ class LoginPageViewController2: UIViewController {
             var view = UIStackView(arrangedSubviews: [nameTextField,textFiledsImage])
             view.translatesAutoresizingMaskIntoConstraints = false
             view.axis = .horizontal
-            view.spacing = 1
+            view.spacing = 0
             view.distribution = .fillProportionally
             return view
     }()
@@ -72,7 +72,7 @@ class LoginPageViewController2: UIViewController {
         view.textColor = K.Colors.mainTitleColor
         view.selectedTitleColor = K.Colors.onboardingBtnColor!
         view.selectedLineColor = K.Colors.onboardingBtnColor!
-        
+        view.textAlignment = .left
         return view
     }()
     private lazy var textFiledsImage: UIImageView = {
@@ -80,7 +80,7 @@ class LoginPageViewController2: UIViewController {
            view.translatesAutoresizingMaskIntoConstraints = false
            view.image = .init(systemName: "checkmark")
            view.tintColor = K.Colors.onboardingBtnColor
-   
+           view.widthAnchor.constraint(equalToConstant: 14).isActive = true
            return view
        }()
     
@@ -88,12 +88,12 @@ class LoginPageViewController2: UIViewController {
             var view = UIStackView(arrangedSubviews: [passwordTextField,textFiledsImage2])
             view.translatesAutoresizingMaskIntoConstraints = false
             view.axis = .horizontal
-            view.spacing = 1
+            view.spacing = 0
             view.distribution = .fillProportionally
             return view
     }()
     
-    
+
     private lazy var passwordTextField: UITextField = {
         var view = SkyFloatingLabelTextFieldWithIcon(frame: CGRect(x: 10, y: 10, width: 200, height: 45))
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -110,6 +110,7 @@ class LoginPageViewController2: UIViewController {
            view.translatesAutoresizingMaskIntoConstraints = false
            view.image = .init(systemName: "checkmark")
            view.tintColor = K.Colors.onboardingBtnColor
+           view.widthAnchor.constraint(equalToConstant: 14).isActive = true
            return view
        }()
     
@@ -140,6 +141,7 @@ class LoginPageViewController2: UIViewController {
         view.widthAnchor.constraint(equalToConstant: 15).isActive = true
         view.layer.borderWidth = 2
         view.layer.borderColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
+        view.addTarget(self, action: #selector(buttonChecked), for: .touchUpInside)
         return view
     }()
     
@@ -177,6 +179,7 @@ class LoginPageViewController2: UIViewController {
         view.contentHorizontalAlignment = .center
         view.layer.cornerRadius = 6
         view.clipsToBounds = true
+        view.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         
         return view
     }()
@@ -250,6 +253,25 @@ class LoginPageViewController2: UIViewController {
             accauntStack.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
+    }
+    
+    @objc private func buttonChecked() {
+        if checkbox.currentImage == UIImage.init(systemName: "checkmark" ){
+            checkbox.setImage(nil, for: .normal)
+        } else {
+            checkbox.setImage(.init(systemName: "checkmark"), for: .normal)
+        }
+            
+    }
+    
+    @objc func loginButtonTapped() {
+        if nameTextField.text != nil && passwordTextField.text != nil {
+             let vc = mainViewController()
+            vc.modalTransitionStyle = .flipHorizontal
+            vc.modalPresentationStyle = .fullScreen
+            vc.mainLabel.text = "Hello \(String(describing: nameTextField.text!))"
+            present(vc, animated: true)
+        }
     }
     
     

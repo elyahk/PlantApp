@@ -15,6 +15,7 @@
 		80AC9F6E2875A53E006BC246 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9F6D2875A53E006BC246 /* SignUpViewController.swift */; };
 		CE8AAF7A2876CC6F0099D325 /* LoginPageViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AAF792876CC6F0099D325 /* LoginPageViewController2.swift */; };
 		CE8AAF7D2876FC830099D325 /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = CE8AAF7C2876FC830099D325 /* SkyFloatingLabelTextField */; };
+		CE8AAF7F28771E9C0099D325 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AAF7E28771E9C0099D325 /* mainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		80AC9F6B28757284006BC246 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		80AC9F6D2875A53E006BC246 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CE8AAF792876CC6F0099D325 /* LoginPageViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController2.swift; sourceTree = "<group>"; };
+		CE8AAF7E28771E9C0099D325 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 		2CDF1D9E2874960900F0BC12 = {
 			isa = PBXGroup;
 			children = (
+				CE8AAF7E28771E9C0099D325 /* mainViewController.swift */,
 				2CDF1DA92874960900F0BC12 /* PlantApp */,
 				2CDF1DA82874960900F0BC12 /* Products */,
 			);
@@ -153,6 +156,7 @@
 				CE8AAF7A2876CC6F0099D325 /* LoginPageViewController2.swift in Sources */,
 				80AC9F6E2875A53E006BC246 /* SignUpViewController.swift in Sources */,
 				80AC9F6C28757284006BC246 /* Constants.swift in Sources */,
+				CE8AAF7F28771E9C0099D325 /* mainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
