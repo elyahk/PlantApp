@@ -9,10 +9,7 @@ import UIKit
 
 class TestCollectionViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-
-        let view = UICollectionView.init(frame: .zero, collectionViewLayout: layout)
+        let view = UICollectionView.init(frame: .zero, collectionViewLayout: createLayout())
         view.translatesAutoresizingMaskIntoConstraints = false
         view.register(TestCollectionItemCell.self, forCellWithReuseIdentifier: TestCollectionItemCell.cellName)
         view.delegate = self
@@ -42,6 +39,53 @@ class TestCollectionViewController: UIViewController {
 }
 
 extension TestCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func createLayout() -> UICollectionViewCompositionalLayout {
+        let singleItem = NSCollectionLayoutItem(
+            layoutSize: NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(2/3),
+                heightDimension: .fractionalHeight(1)
+            )
+        )
+
+        singleItem.contentInsets = NSDirectionalEdgeInsets(top: 2.0, leading: 2.0, bottom: 0.0, trailing: 0.0)
+
+        let doubletItem = NSCollectionLayoutItem(
+            layoutSize: NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1),
+                heightDimension: .fractionalHeight(1/2)
+            )
+        )
+        doubletItem.contentInsets = NSDirectionalEdgeInsets(top: 2.0, leading: 2.0, bottom: 0.0, trailing: 2.0)
+
+        let doubletGroup = NSCollectionLayoutGroup.vertical(
+            layoutSize: NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1/3),
+                heightDimension: .fractionalHeight(1.0)),
+            subitem: doubletItem,
+            count: 2
+        )
+
+        let topGroup = NSCollectionLayoutGroup.horizontal(
+            layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(2/3)),
+            subitems: [singleItem, doubletGroup]
+        )
+
+        let tripletItem = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)))
+        tripletItem.contentInsets = .init(top: 2.0, leading: 2.0, bottom: 0.0, trailing: 0.0)
+
+        let tripletGroup = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1/3)), subitem: tripletItem, count: 3)
+        tripletGroup.contentInsets = .init(top: 0.0, leading: 0.0, bottom: 0.0, trailing: 2.0)
+
+        let contentGroup = NSCollectionLayoutGroup.vertical(
+            layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/2)),
+            subitems: [topGroup, tripletGroup]
+        )
+//        contentGroup.contentInsets = .init(top: 2.0, leading: 2.0, bottom: 0.0, trailing: 2.0)
+
+        let section = NSCollectionLayoutSection(group: contentGroup)
+        return UICollectionViewCompositionalLayout(section: section)
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 100
     }

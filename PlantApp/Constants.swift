@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct K{
+struct K {
     
     struct OnboardingImages{
         static var identifyPageImage = UIImage(named: "ic_onboarding_identify")
@@ -43,5 +43,10 @@ struct K{
         static var identifyPageDot = UIImage(named: "ic_dots_1")
         static var learnPageDot = UIImage(named: "ic_dots_2")
         static var readPageDot = UIImage(named: "ic_dots_3")
+    }
+
+    struct TestImages {
+        static var image = UIImage(named: "image")
+        static var image1 = UIImage(named: "image2")
     }
 }

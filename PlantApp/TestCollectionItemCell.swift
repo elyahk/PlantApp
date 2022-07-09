@@ -11,29 +11,10 @@ import UIKit
 class TestCollectionItemCell: UICollectionViewCell {
     static let cellName: String = String(describing: TestCollectionItemCell.self)
 
-    lazy var titleLabel: UILabel = {
-        let view = UILabel()
+    lazy var imageView: UIImageView = {
+        let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "Title"
-        view.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        view.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
-
-        return view
-    }()
-
-    lazy var subtitleLabel: UILabel = {
-        let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "Sub Title"
-
-        return view
-    }()
-
-    lazy var contentStackView: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.spacing = 5.0
-        view.axis = .vertical
+        view.image = Int.random(in: 0...3) == 0 ? K.TestImages.image : K.TestImages.image1
 
         return view
     }()
@@ -49,13 +30,13 @@ class TestCollectionItemCell: UICollectionViewCell {
     }
 
     private func setupSubviews() {
-        addSubview(contentStackView)
+        addSubview(imageView)
 
         NSLayoutConstraint.activate([
-            contentStackView.topAnchor.constraint(equalTo: topAnchor),
-            contentStackView.leftAnchor.constraint(equalTo: leftAnchor),
-            contentStackView.rightAnchor.constraint(equalTo: rightAnchor),
-            contentStackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.leftAnchor.constraint(equalTo: leftAnchor),
+            imageView.rightAnchor.constraint(equalTo: rightAnchor),
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
