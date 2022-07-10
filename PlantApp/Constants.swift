@@ -7,14 +7,31 @@
 
 import UIKit
 
-struct Constant{
-    
-    struct OnboardingImages{
-        static var identifyPageImage = UIImage(named: "ic_onboarding_identify")
-        static var learnPageImage = UIImage(named: "ic_onboarding_learn")
-        static var readPageImage = UIImage(named: "ic_onboarding_read")
+enum Images {
+    case identifyPageImage
+    case learnPageImage
+    case readPageImage
+    case identifyPageDot
+    case learnPageDot
+    case readPageDot
+    case image
+    case image1
+
+    var image: UIImage? {
+        switch self {
+        case .identifyPageImage: return UIImage(named: "ic_onboarding_identify")
+        case .learnPageImage: return UIImage(named: "ic_onboarding_learn")
+        case .readPageImage: return UIImage(named: "ic_onboarding_read")
+        case .identifyPageDot: return UIImage(named: "ic_dots_1")
+        case .learnPageDot: return UIImage(named: "ic_dots_2")
+        case .readPageDot: return UIImage(named: "ic_dots_3")
+        case .image: return UIImage(named: "image")
+        case .image1: return UIImage(named: "image2")
+        }
     }
-    
+}
+
+struct Constant {
     struct Colors{
         static let mainBgColor = UIColor(named: "main_bg")
         static let mainTitleColor = UIColor(named: "main_title_color")
@@ -37,16 +54,5 @@ struct Constant{
         static var learnPageDescription = "Let's learn about the many plant species that exist in this world"
         static var readPageDescription = "Let's learn more about beautiful plants and read many articles about plants and gardening"
         static var loginPageDescription = "Let’s Learn More About Plants"
-    }
-    
-    struct DotImages{
-        static var identifyPageDot = UIImage(named: "ic_dots_1")
-        static var learnPageDot = UIImage(named: "ic_dots_2")
-        static var readPageDot = UIImage(named: "ic_dots_3")
-    }
-
-    struct TestImages {
-        static var image = UIImage(named: "image")
-        static var image1 = UIImage(named: "image2")
     }
 }

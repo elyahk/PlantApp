@@ -14,7 +14,7 @@ class TestCollectionItemCell: UICollectionViewCell {
     lazy var imageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.image = Int.random(in: 0...3) == 0 ? K.TestImages.image : K.TestImages.image1
+        view.image = Int.random(in: 0...3) == 0 ? Images.image.image : Images.image1.image
 
         return view
     }()
