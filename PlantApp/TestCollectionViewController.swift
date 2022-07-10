@@ -80,14 +80,18 @@ extension TestCollectionViewController: UICollectionViewDelegate, UICollectionVi
             layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/2)),
             subitems: [topGroup, tripletGroup]
         )
-//        contentGroup.contentInsets = .init(top: 2.0, leading: 2.0, bottom: 0.0, trailing: 2.0)
 
         let section = NSCollectionLayoutSection(group: contentGroup)
+        section.orthogonalScrollingBehavior = .continuous
         return UICollectionViewCompositionalLayout(section: section)
     }
 
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        2
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return 20
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -101,7 +105,4 @@ extension TestCollectionViewController: UICollectionViewDelegate, UICollectionVi
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: 100.0, height: 100.0)
-    }
 }
