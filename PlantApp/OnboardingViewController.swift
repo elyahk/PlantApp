@@ -14,7 +14,6 @@ enum Page {
 }
 
 class OnboardingViewController: UIViewController {
-
     private var pageNumber = 1
     private var page = Page.identifyPage
     
