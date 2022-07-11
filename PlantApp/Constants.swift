@@ -16,6 +16,7 @@ enum Images {
     case readPageDot
     case image
     case image1
+    case icHomeTopBg
 
     var image: UIImage? {
         switch self {
@@ -27,6 +28,7 @@ enum Images {
         case .readPageDot: return UIImage(named: "ic_dots_3")
         case .image: return UIImage(named: "image")
         case .image1: return UIImage(named: "image2")
+        case .icHomeTopBg: return UIImage(named: "ic_home_top_bg")
         }
     }
 }

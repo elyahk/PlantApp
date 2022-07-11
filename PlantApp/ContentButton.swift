@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ContentButton: UIViewController{
+class ContentButton: UIViewController {
     
     lazy var contentView: UIView = {
         let view = UIView()
