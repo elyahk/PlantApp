@@ -10,9 +10,17 @@ import UIKit
 class SignUpViewController: UIViewController{
     
     private lazy var testCollectionView: UICollectionView = {
-            let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-            layout.scrollDirection = .horizontal
-
+        let item =  NSCollectionLayoutItem(layoutSize: .init(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1)))
+        item.contentInsets.top = 10
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(
+            widthDimension: .fractionalWidth(1/2),
+            heightDimension: .fractionalHeight(1)),
+            subitem: item,
+            count: 2)
+        let section = NSCollectionLayoutSection(group: group)
+            let layout = UICollectionViewCompositionalLayout(section: section)
             let view = UICollectionView.init(frame: .zero, collectionViewLayout: layout)
             view.translatesAutoresizingMaskIntoConstraints = false
             view.register(CollectionCell.self, forCellWithReuseIdentifier: CollectionCell.cellId)

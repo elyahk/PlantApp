@@ -14,7 +14,12 @@ enum Images {
     case identifyPageDot
     case learnPageDot
     case readPageDot
-    
+    case mainPageUserPhoto
+    case mainPageflowerImage1
+    case mainPageflowerImage2
+    case mainPageflowerImage3
+    case mainPagePlantImage
+    case mainPageBackgroundImage
     var image: UIImage? {
         switch self {
         case .identifyPageImage: return  UIImage(named: "ic_onboarding_identify")
@@ -23,6 +28,13 @@ enum Images {
         case .identifyPageDot: return UIImage(named: "ic_dots_1")
         case .learnPageDot: return UIImage(named: "ic_dots_2")
         case .readPageDot: return UIImage(named: "ic_dots_3")
+        case .mainPageUserPhoto: return UIImage(named: "ic_userPhoto")
+        case .mainPageflowerImage1: return UIImage(named: "ic_flower_1")
+        case .mainPageflowerImage2: return UIImage(named: "ic_flower_2")
+        case .mainPageflowerImage3: return UIImage(named: "ic_flower_3")
+        case .mainPagePlantImage: return UIImage(named: "ic_plant_1")
+        case .mainPageBackgroundImage: return UIImage(named: "ic_plant_1")
+
         }
     }
 }

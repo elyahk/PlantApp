@@ -14,7 +14,7 @@ class CollectionCell: UICollectionViewCell {
             var view = UIImageView()
             view.translatesAutoresizingMaskIntoConstraints = false
             view.contentMode = .scaleAspectFill
-            view.image = (Int.random(in: 0...3) != 0) ? Images.readPageImage.image : Images.learnPageDot.image
+            view.image = (Int.random(in: 0...3) != 0) ? Images.identifyPageImage.image : Images.readPageImage.image
             return view
         }()
         
