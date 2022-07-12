@@ -132,7 +132,7 @@ class OnboardingViewController: UIViewController {
         ])
     }
     
-    @objc func nextButtonTapped(on: UIButton){
+    @objc private func nextButtonTapped(on: UIButton){
         pageNumber += 1
         
         switch pageNumber{

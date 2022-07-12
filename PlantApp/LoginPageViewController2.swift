@@ -16,6 +16,7 @@ class LoginPageViewController2: UIViewController {
         view.contentHorizontalAlignment = .fill
         view.setImage( .init(systemName: "chevron.backward"), for: .normal)
         view.tintColor = K.Colors.mainSubtitleColor
+        view.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         return view
     }()
     
@@ -23,7 +24,7 @@ class LoginPageViewController2: UIViewController {
         var view = UIStackView(arrangedSubviews: [mainLabel,descriptionLabel])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
-        view.spacing = 10
+        view.spacing = 12
         view.distribution = .fill
         view.setContentHuggingPriority(.defaultHigh, for: .vertical)
         return view
@@ -62,7 +63,7 @@ class LoginPageViewController2: UIViewController {
         ])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
-        view.spacing = 30
+        view.spacing = 35
         view.distribution = .fill
         return view
     }()
@@ -88,13 +89,14 @@ class LoginPageViewController2: UIViewController {
         view.font = .systemFont(ofSize: 16, weight: .bold)
         view.setContentHuggingPriority(.defaultHigh, for: .vertical)
         view.errorColor = .red
+        view.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         return view
     }()
     private lazy var textFiledsImage: UIImageView = {
         var view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.image = .init(systemName: "checkmark")
-        view.tintColor = K.Colors.onboardingBtnColor
+        view.tintColor = K.Colors.mainBgColor
         view.widthAnchor.constraint(equalToConstant: 14).isActive = true
         return view
     }()
@@ -121,13 +123,14 @@ class LoginPageViewController2: UIViewController {
         view.font = .systemFont(ofSize: 16, weight: .bold)
         view.setContentHuggingPriority(.defaultHigh, for: .vertical)
         view.errorColor = .red
+        view.addTarget(self, action: #selector(passwordTextFieldChanged), for: .editingChanged)
         return view
     }()
     private lazy var textFiledsImage2: UIImageView = {
         var view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.image = .init(systemName: "checkmark")
-        view.tintColor = K.Colors.onboardingBtnColor
+        view.tintColor = K.Colors.mainBgColor
         view.widthAnchor.constraint(equalToConstant: 14).isActive = true
         return view
     }()
@@ -247,11 +250,12 @@ class LoginPageViewController2: UIViewController {
             backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 23),
             backButton.heightAnchor.constraint(equalToConstant: 23),
             backButton.widthAnchor.constraint(equalToConstant: 23),
-            mainStack.topAnchor.constraint(equalTo:backButton.bottomAnchor,constant: 25),
+            mainStack.topAnchor.constraint(equalTo:backButton.bottomAnchor,constant: 35),
             mainStack.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 23),
             mainStack.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -23),
-            mainStack.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.35),
-            loginButton.topAnchor.constraint(equalTo: mainStack.bottomAnchor,constant: 40),
+            mainStack.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.32),
+            nameTextFieldStack.topAnchor.constraint(equalTo: labelsStack.bottomAnchor, constant: 42),
+            passwordTextFieldStack.topAnchor.constraint(equalTo: nameTextFieldStack.bottomAnchor, constant: 42), loginButton.topAnchor.constraint(equalTo: mainStack.bottomAnchor,constant: 40),
             loginButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 23),
             loginButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -23),
             loginButton.heightAnchor.constraint(equalToConstant: 50),
@@ -288,5 +292,35 @@ class LoginPageViewController2: UIViewController {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
+    @objc func textFieldDidChange(_ textfield: UITextField) {
+            if let text = nameTextField.text {
+                if let floatingLabelTextField = nameTextField as? SkyFloatingLabelTextField {
+                    if text.isEmpty {
+                        floatingLabelTextField.errorMessage = "Invalid name"
+                    }
+                    else {
+                        textFiledsImage.tintColor = K.Colors.onboardingBtnColor
+                        floatingLabelTextField.errorMessage = "Please write your name"
+                    }
+                }
+            }
+        }
     
+    @objc func passwordTextFieldChanged(_ textfield: UITextField) {
+            if let text = passwordTextField.text {
+                if let floatingLabelTextField = passwordTextField as? SkyFloatingLabelTextField {
+                    if text.count < 10 {
+                        floatingLabelTextField.errorMessage = "Invalid password"
+                    }
+                    else {
+                        textFiledsImage2.tintColor = K.Colors.onboardingBtnColor
+                        floatingLabelTextField.errorMessage = "Please write your password correct"
+                    }
+                }
+            }
+        }
+    
+    @objc private func backButtonTapped() {
+        self.dismiss(animated: true)
+    }
 }
