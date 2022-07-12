@@ -10,25 +10,14 @@ import UIKit
 class SignUpViewController: UIViewController{
     
     private lazy var testCollectionView: UICollectionView = {
-        let item =  NSCollectionLayoutItem(layoutSize: .init(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(1)))
-        item.contentInsets.top = 10
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(
-            widthDimension: .fractionalWidth(1/2),
-            heightDimension: .fractionalHeight(1)),
-            subitem: item,
-            count: 2)
-        let section = NSCollectionLayoutSection(group: group)
-            let layout = UICollectionViewCompositionalLayout(section: section)
-            let view = UICollectionView.init(frame: .zero, collectionViewLayout: layout)
-            view.translatesAutoresizingMaskIntoConstraints = false
-            view.register(CollectionCell.self, forCellWithReuseIdentifier: CollectionCell.cellId)
-            view.delegate = self
-            view.dataSource = self
-
-            return view
-        }()
+        let view = UICollectionView.init(frame: .zero, collectionViewLayout: createLayout())
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.register(CollectionCell.self, forCellWithReuseIdentifier: CollectionCell.cellId)
+        view.delegate = self
+        view.dataSource = self
+        
+        return view
+    }()
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -50,16 +39,35 @@ extension SignUpViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 100
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         guard let cell = testCollectionView.dequeueReusableCell(withReuseIdentifier: CollectionCell.cellId, for: indexPath) as?  CollectionCell else {
             return UICollectionViewCell()
         }
-
-
+        
+        
         return cell
     }
-
+    
+    private func createLayout() -> UICollectionViewLayout {
+        let doubleItem =  NSCollectionLayoutItem(layoutSize: .init(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1)))
+        let doubleGroup = NSCollectionLayoutGroup.vertical(layoutSize:.init(
+            widthDimension: .fractionalWidth(1/2),
+            heightDimension: .fractionalHeight(1)) ,subitem: doubleItem, count: 2)
+        let singleItem =  NSCollectionLayoutItem(layoutSize: .init(
+            widthDimension: .fractionalWidth(1/2),
+            heightDimension: .fractionalHeight(1)))
+        let mainGroup = NSCollectionLayoutGroup.horizontal(layoutSize: .init(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1/2)),subitems: [singleItem,doubleGroup])
+        let section = NSCollectionLayoutSection(group: mainGroup)
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        
+        return layout
+    }
+    
 }
 

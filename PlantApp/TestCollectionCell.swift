@@ -13,8 +13,8 @@ class CollectionCell: UICollectionViewCell {
     private lazy var cellImage: UIImageView = {
             var view = UIImageView()
             view.translatesAutoresizingMaskIntoConstraints = false
-            view.contentMode = .scaleAspectFill
-            view.image = (Int.random(in: 0...3) != 0) ? Images.identifyPageImage.image : Images.readPageImage.image
+        view.contentMode = .scaleToFill
+        view.image = (Int.random(in: 0...3) != 0) ? Images.mainPagePlantImage.image : Images.mainPageflowerImage2.image
             return view
         }()
         
