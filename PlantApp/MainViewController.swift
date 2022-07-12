@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
             
         ])
     }
-    
+    //MARK: - Setup composition layout
     private func setupLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
             if sectionIndex == 0 {
@@ -74,15 +74,33 @@ class MainViewController: UIViewController {
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
                 return section
-            } else {
+            } else if sectionIndex == 2{
                 let item = NSCollectionLayoutItem(layoutSize: .init(
                     widthDimension: .fractionalWidth(1),
                     heightDimension: .fractionalHeight(1)))
                 item.contentInsets.trailing = 23
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(
                     widthDimension: .fractionalWidth(1),
-                    heightDimension: .fractionalHeight(0.25)), subitem: item, count: 1)
-                group.contentInsets = .init(top: 35, leading: 23, bottom: 0, trailing: 0.0)
+                    heightDimension: .fractionalHeight(0.3)), subitem: item, count: 1)
+                group.contentInsets = .init(top: 15, leading: 23, bottom: 0, trailing: 0.0)
+                let section = NSCollectionLayoutSection(group: group)
+                section.orthogonalScrollingBehavior = .continuous
+                section.boundarySupplementaryItems = [.init(
+                    layoutSize: .init(
+                        widthDimension: .fractionalWidth(1),
+                        heightDimension: .absolute(30)),
+                    elementKind: "firstHeaderId",
+                    alignment: .topLeading)]
+                return section
+            } else  {
+                let item = NSCollectionLayoutItem(layoutSize: .init(
+                    widthDimension: .fractionalWidth(1),
+                    heightDimension: .fractionalHeight(1)))
+//                item.contentInsets.trailing = 23
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(
+                    widthDimension: .fractionalWidth(0.4),
+                    heightDimension: .fractionalHeight(0.28)), subitem: item, count: 1)
+                group.contentInsets = .init(top: 35, leading: 17, bottom: 0, trailing: 0.0)
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
                 return section
@@ -91,6 +109,8 @@ class MainViewController: UIViewController {
         return layout
     }
 }
+
+//MARK: - Extension for MainVC inheretance protocol for collection View
 extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 4
@@ -103,6 +123,8 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
             return 3
         } else if section == 2 {
             return 3
+        }  else if section == 3 {
+            return 6
         }
         return 0
     }
@@ -111,5 +133,16 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
         cell.backgroundColor = .red
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let supplementary = contectCollectionView.dequeueReusableSupplementaryView(ofKind: "firstHeaderId", withReuseIdentifier: "id", for: indexPath)
+        return supplementary
+    }
+}
+
+class Header: UICollectionReusableView {
+     
+//    lazy var label: UILabel = {
+//        
+//    }()
 }
 
