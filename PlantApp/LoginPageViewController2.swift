@@ -15,7 +15,7 @@ class LoginPageViewController2: UIViewController {
         view.contentVerticalAlignment = .fill
         view.contentHorizontalAlignment = .fill
         view.setImage( .init(systemName: "chevron.backward"), for: .normal)
-        view.tintColor = K.Colors.mainSubtitleColor
+        view.tintColor = Colors.mainSubtitleColor.color
         view.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         return view
     }()
@@ -33,8 +33,8 @@ class LoginPageViewController2: UIViewController {
     private lazy var mainLabel: UILabel = {
         var view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = K.TitleLabels.loginPageTitleLabel
-        view.textColor = K.Colors.mainTitleColor
+        view.text = Labels.loginPageTitleLabel.label
+        view.textColor = Colors.mainTitleColor.color
         view.font = UIFont(name: "'SF Pro Text'", size: 30.0)
         view.font = .systemFont(ofSize: 30.0, weight: .bold)
         view.setContentHuggingPriority(.defaultHigh, for: .vertical)
@@ -43,8 +43,8 @@ class LoginPageViewController2: UIViewController {
     private lazy var descriptionLabel: UILabel = {
         var view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = K.DescriptionLabels.loginPageDescription
-        view.textColor = K.Colors.mainSubtitleColor
+        view.text = Labels.loginPageDescription.label
+        view.textColor = Colors.mainSubtitleColor.color
         view.font = .systemFont(ofSize: 16.0, weight: .regular)
         view.font = UIFont(name: "'SF Pro Text'", size: 16.0)
         view.setContentHuggingPriority(.defaultHigh, for: .vertical)
@@ -82,9 +82,9 @@ class LoginPageViewController2: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.placeholder = "Username"
         view.placeholderFont = .systemFont(ofSize: 14)
-        view.textColor = K.Colors.mainTitleColor
-        view.selectedTitleColor = K.Colors.onboardingBtnColor!
-        view.selectedLineColor = K.Colors.onboardingBtnColor!
+        view.textColor = Colors.mainTitleColor.color
+        view.selectedTitleColor = Colors.onboardingBtnColor.color!
+        view.selectedLineColor = Colors.onboardingBtnColor.color!
         view.selectedLineHeight = 1.0
         view.font = .systemFont(ofSize: 16, weight: .bold)
         view.setContentHuggingPriority(.defaultHigh, for: .vertical)
@@ -96,7 +96,7 @@ class LoginPageViewController2: UIViewController {
         var view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.image = .init(systemName: "checkmark")
-        view.tintColor = K.Colors.mainBgColor
+        view.tintColor = Colors.mainBgColor.color
         view.widthAnchor.constraint(equalToConstant: 14).isActive = true
         return view
     }()
@@ -115,9 +115,9 @@ class LoginPageViewController2: UIViewController {
         var view = SkyFloatingLabelTextField(frame: CGRect(x: 10, y: 10, width: 200, height: 50))
         view.translatesAutoresizingMaskIntoConstraints = false
         view.placeholder = "password"
-        view.textColor = K.Colors.mainTitleColor
-        view.selectedTitleColor = K.Colors.onboardingBtnColor!
-        view.selectedLineColor = K.Colors.onboardingBtnColor!
+        view.textColor = Colors.mainTitleColor.color
+        view.selectedTitleColor = Colors.onboardingBtnColor.color!
+        view.selectedLineColor = Colors.onboardingBtnColor.color!
         view.selectedLineHeight = 1.0
         view.placeholderFont = .systemFont(ofSize: 12)
         view.font = .systemFont(ofSize: 16, weight: .bold)
@@ -130,7 +130,7 @@ class LoginPageViewController2: UIViewController {
         var view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.image = .init(systemName: "checkmark")
-        view.tintColor = K.Colors.mainBgColor
+        view.tintColor = Colors.mainBgColor.color
         view.widthAnchor.constraint(equalToConstant: 14).isActive = true
         return view
     }()
@@ -170,7 +170,7 @@ class LoginPageViewController2: UIViewController {
         var view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = "Remember me"
-        view.textColor = K.Colors.mainSubtitleColor
+        view.textColor = Colors.mainSubtitleColor.color
         view.font = .systemFont(ofSize: 11.0, weight: .regular)
         return view
     }()
@@ -179,7 +179,7 @@ class LoginPageViewController2: UIViewController {
         var view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("Forgot Password?", for: .normal)
-        view.setTitleColor(K.Colors.mainSubtitleColor, for: .normal)
+        view.setTitleColor(Colors.mainSubtitleColor.color, for: .normal)
         view.titleLabel?.font = .systemFont(ofSize: 12.0, weight: .medium)
         view.layer.borderWidth = 0.0
         view.contentHorizontalAlignment = .right
@@ -191,7 +191,7 @@ class LoginPageViewController2: UIViewController {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("Login", for: .normal)
-        view.backgroundColor = K.Colors.onboardingBtnColor
+        view.backgroundColor = Colors.onboardingBtnColor.color
         view.setTitleColor(.white, for: .normal)
         view.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
         view.contentHorizontalAlignment = .center
@@ -216,7 +216,7 @@ class LoginPageViewController2: UIViewController {
         var view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = "Don’t Have Account?"
-        view.textColor = K.Colors.mainSubtitleColor
+        view.textColor = Colors.mainSubtitleColor.color
         view.font = .systemFont(ofSize: 11.0, weight: .regular)
         view.textAlignment = .right
         return view
@@ -226,7 +226,7 @@ class LoginPageViewController2: UIViewController {
         var view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("Sign Up", for: .normal)
-        view.setTitleColor(K.Colors.onboardingBtnColor, for: .normal)
+        view.setTitleColor(Colors.onboardingBtnColor.color, for: .normal)
         view.titleLabel?.font = .systemFont(ofSize: 12.0, weight: .bold)
         view.layer.borderWidth = 0.0
         view.backgroundColor = .clear
@@ -236,7 +236,7 @@ class LoginPageViewController2: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = K.Colors.mainBgColor
+        view.backgroundColor = Colors.mainBgColor.color
         setupSubview()
     }
     
@@ -299,7 +299,7 @@ class LoginPageViewController2: UIViewController {
                         floatingLabelTextField.errorMessage = "Invalid name"
                     }
                     else {
-                        textFiledsImage.tintColor = K.Colors.onboardingBtnColor
+                        textFiledsImage.tintColor = Colors.onboardingBtnColor.color
                         floatingLabelTextField.errorMessage = "Please write your name"
                     }
                 }
@@ -313,7 +313,7 @@ class LoginPageViewController2: UIViewController {
                         floatingLabelTextField.errorMessage = "Invalid password"
                     }
                     else {
-                        textFiledsImage2.tintColor = K.Colors.onboardingBtnColor
+                        textFiledsImage2.tintColor = Colors.onboardingBtnColor.color
                         floatingLabelTextField.errorMessage = "Please write your password correct"
                     }
                 }
