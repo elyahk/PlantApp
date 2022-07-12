@@ -17,6 +17,7 @@
 		CE0F5EE6287AEAA60009BE73 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F5EE5287AEAA60009BE73 /* MainViewController.swift */; };
 		CE8AAF7A2876CC6F0099D325 /* LoginPageViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AAF792876CC6F0099D325 /* LoginPageViewController2.swift */; };
 		CE8AAF7D2876FC830099D325 /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = CE8AAF7C2876FC830099D325 /* SkyFloatingLabelTextField */; };
+		CE9ACA39287D9D870079337E /* TestCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ACA38287D9D870079337E /* TestCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		CE0F5EE3287AE8070009BE73 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
 		CE0F5EE5287AEAA60009BE73 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE8AAF792876CC6F0099D325 /* LoginPageViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController2.swift; sourceTree = "<group>"; };
+		CE9ACA38287D9D870079337E /* TestCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				CE0F5EE5287AEAA60009BE73 /* MainViewController.swift */,
 				CE0F5EE3287AE8070009BE73 /* Tabbar.swift */,
 				80AC9F6D2875A53E006BC246 /* SignUpViewController.swift */,
+				CE9ACA38287D9D870079337E /* TestCollectionCell.swift */,
 				2CDF1DB32874960B00F0BC12 /* Assets.xcassets */,
 				2CDF1DB52874960B00F0BC12 /* LaunchScreen.storyboard */,
 				2CDF1DB82874960B00F0BC12 /* Info.plist */,
@@ -161,6 +164,7 @@
 				CE0F5EE4287AE8070009BE73 /* Tabbar.swift in Sources */,
 				80AC9F6E2875A53E006BC246 /* SignUpViewController.swift in Sources */,
 				80AC9F6C28757284006BC246 /* Constants.swift in Sources */,
+				CE9ACA39287D9D870079337E /* TestCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
