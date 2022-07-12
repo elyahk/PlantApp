@@ -7,47 +7,51 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate{
+class SignUpViewController: UIViewController{
     
     private lazy var testCollectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        var view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.register(CollectionCell.self, forCellWithReuseIdentifier: "image")
-        view.dataSource = self
-        view.delegate = self
-        return view
-    }()
-    
+            let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+            layout.scrollDirection = .horizontal
+
+            let view = UICollectionView.init(frame: .zero, collectionViewLayout: layout)
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.register(CollectionCell.self, forCellWithReuseIdentifier: CollectionCell.cellId)
+            view.delegate = self
+            view.dataSource = self
+
+            return view
+        }()
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
-     setupSubviews()
+        view.backgroundColor = .white
+        setupSubviews()
     }
-    
     private func setupSubviews() {
         view.addSubview(testCollectionView)
         
         NSLayoutConstraint.activate([
-            testCollectionView.topAnchor.constraint(equalTo: view.topAnchor,constant: 25),
-            testCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 24),
-            testCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25),
-            testCollectionView.bottomAnchor.constraint(equalTo: view.topAnchor,constant: -25),
+            testCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            testCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            testCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            testCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
 }
-
-extension SignUpViewController {
-    
+extension SignUpViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return 100
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as? CollectionCell else { return UICollectionViewCell() }
-        
+
+        guard let cell = testCollectionView.dequeueReusableCell(withReuseIdentifier: CollectionCell.cellId, for: indexPath) as?  CollectionCell else {
+            return UICollectionViewCell()
+        }
+
+
         return cell
     }
-    
+
 }
+
