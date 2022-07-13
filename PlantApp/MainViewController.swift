@@ -25,9 +25,8 @@ class MainViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.delegate = self
         view.dataSource = self
-        view.register(
-            UICollectionViewCell.self,
-            forCellWithReuseIdentifier: "UICollectionViewCell")
+        view.register(UICollectionViewCell.self, forCellWithReuseIdentifier:"UICollectionViewCell")
+        view.register(ButtonsCell.self,forCellWithReuseIdentifier: "ButtonsCell")
         view.register(Header.self, forSupplementaryViewOfKind: "firstHeaderId", withReuseIdentifier: "Header")
         return view
     }()
@@ -100,7 +99,7 @@ class MainViewController: UIViewController {
                 let item = NSCollectionLayoutItem(layoutSize: .init(
                     widthDimension: .fractionalWidth(1),
                     heightDimension: .fractionalHeight(1)))
-//                item.contentInsets.trailing = 23
+                //                item.contentInsets.trailing = 23
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(
                     widthDimension: .fractionalWidth(0.4),
                     heightDimension: .fractionalHeight(0.28)), subitem: item, count: 1)
@@ -141,9 +140,13 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
         return 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = contectCollectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
-        cell.backgroundColor = .red
+        guard indexPath.section == 1, let cell = contectCollectionView.dequeueReusableCell(withReuseIdentifier:"ButtonsCell" , for: indexPath) as? ButtonsCell else {
+            let cell = contectCollectionView.dequeueReusableCell(withReuseIdentifier:"UICollectionViewCell" , for: indexPath)
+            cell.backgroundColor = .red
+            return cell
+        }
         return cell
+        
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if indexPath.section == 2 {
@@ -159,7 +162,7 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
             supplementary.label.text = "Photography"
             return supplementary
         } else {
-             return UICollectionReusableView()
+            return UICollectionReusableView()
         }
         
     }
@@ -167,7 +170,7 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
 
 class Header: UICollectionReusableView {
     
-     lazy var label: UILabel = {
+    lazy var label: UILabel = {
         var view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.textColor = .black
@@ -186,14 +189,14 @@ class Header: UICollectionReusableView {
     
     private func setupSubViews() {
         self.addSubview(label)
-       
+        
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: self.topAnchor),
             label.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 23),
             label.rightAnchor.constraint(equalTo: self.rightAnchor),
             label.bottomAnchor.constraint(equalTo: self.bottomAnchor),
         ])
-
+        
     }
     
     
