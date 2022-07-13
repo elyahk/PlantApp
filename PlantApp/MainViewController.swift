@@ -27,6 +27,7 @@ class MainViewController: UIViewController {
         view.dataSource = self
         view.register(UICollectionViewCell.self, forCellWithReuseIdentifier:"UICollectionViewCell")
         view.register(ButtonsCell.self,forCellWithReuseIdentifier: "ButtonsCell")
+        view.register(MainCell.self,forCellWithReuseIdentifier: "MainCell")
         view.register(Header.self, forSupplementaryViewOfKind: "firstHeaderId", withReuseIdentifier: "Header")
         return view
     }()
@@ -59,7 +60,7 @@ class MainViewController: UIViewController {
                 item.contentInsets = .init(top: 3, leading: 3, bottom: 3, trailing: 3)
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(
                     widthDimension: .fractionalWidth(1),
-                    heightDimension: .fractionalHeight(0.25)), subitem: item, count: 1)
+                    heightDimension: .fractionalHeight(0.35)), subitem: item, count: 1)
                 return NSCollectionLayoutSection(group: group)
             }
             else if sectionIndex == 1 {
@@ -140,6 +141,15 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
         return 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if indexPath.section == 0 {
+            guard let cell = contectCollectionView.dequeueReusableCell(withReuseIdentifier:"MainCell" , for: indexPath) as? MainCell else {
+                let cell = contectCollectionView.dequeueReusableCell(withReuseIdentifier:"UICollectionViewCell" , for: indexPath)
+                cell.backgroundColor = .red
+                return cell
+            }
+            return cell
+        }
         guard indexPath.section == 1, let cell = contectCollectionView.dequeueReusableCell(withReuseIdentifier:"ButtonsCell" , for: indexPath) as? ButtonsCell else {
             let cell = contectCollectionView.dequeueReusableCell(withReuseIdentifier:"UICollectionViewCell" , for: indexPath)
             cell.backgroundColor = .red

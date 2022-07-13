@@ -8,48 +8,57 @@
 import UIKit
 
 class MainCell: UICollectionViewCell {
-    lazy var buttonView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = #colorLiteral(red: 0.1742218435, green: 0.8692209125, blue: 0.6429886222, alpha: 1)
-        view.layer.cornerRadius = 10
-        
-        
-        view.layer.shadowOffset = CGSize(width: 1.0,
-                                         height: 1.0)
-        view.layer.shadowRadius = 5
-        view.layer.shadowOpacity = 0.8
-        view.layer.shadowColor = #colorLiteral(red: 0.1742218435, green: 0.8692209125, blue: 0.6429886222, alpha: 1)
-        
-        return view
-    }()
     
-    lazy var buttonImage: UIImageView = {
-        let view = UIImageView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.image = UIImage(systemName: "camera.fill")
-        view.backgroundColor = .clear
-        view.tintColor = .white
-        
-        return view
-    }()
-    
-    lazy var buttonLabel: UILabel = {
+    lazy var nameLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "Identify"
-        view.font = UIFont.boldSystemFont(ofSize: 16)
+        view.text = "Hello"
+        view.font = .monospacedSystemFont(ofSize: 21, weight: .bold)
         view.textColor = .white
+        view.setContentHuggingPriority(.defaultHigh, for: .vertical)
         return view
     }()
     
-    lazy var button: UIButton = {
-        let view = UIButton()
+   private lazy var descriptionLabel: UILabel = {
+        let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.addTarget(self, action: #selector(buttonTapped(on:)), for: .touchUpInside)
+        view.text = Labels.loginPageDescription.label
+        view.font = .monospacedSystemFont(ofSize: 14, weight: .regular)
+        view.textColor = .white
+       
         return view
     }()
     
+    private lazy var labelStack: UIStackView = {
+        var view = UIStackView(arrangedSubviews: [nameLabel, descriptionLabel])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .vertical
+        view.spacing = 4
+        view.distribution = .fill
+        return view
+    }()
+    
+    
+    lazy var userImage: UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.image = Images.mainPageUserPhoto.image
+        view.backgroundColor = .clear
+        view.tintColor = .white
+        view.layer.cornerRadius = 15
+        return view
+    }()
+    lazy var backgroundImage: UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.image = Images.mainPageBackgroundImage.image
+        view.contentMode = .scaleToFill
+        view.backgroundColor = .clear
+        view.tintColor = .white
+        view.layer.cornerRadius = 15
+        return view
+    }()
+  
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -61,33 +70,25 @@ class MainCell: UICollectionViewCell {
     }
     
     func setupSubviews(){
-        self.addSubview(buttonView)
-        self.addSubview(buttonLabel)
-        self.addSubview(buttonImage)
-        self.addSubview(button)
+        self.addSubview(backgroundImage)
+        self.addSubview(labelStack)
+        self.addSubview(userImage)
         
         NSLayoutConstraint.activate([
-            buttonView.topAnchor.constraint(equalTo: self.topAnchor),
-            buttonView.leftAnchor.constraint(equalTo: self.leftAnchor),
-            buttonView.rightAnchor.constraint(equalTo: self.rightAnchor),
-            buttonView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            buttonLabel.bottomAnchor.constraint(equalTo: buttonView.bottomAnchor, constant: -20),
-            buttonLabel.centerXAnchor.constraint(equalTo: buttonView.centerXAnchor),
+            backgroundImage.topAnchor.constraint(equalTo: self.topAnchor),
+            backgroundImage.leftAnchor.constraint(equalTo: self.leftAnchor),
+            backgroundImage.rightAnchor.constraint(equalTo: self.rightAnchor),
+            backgroundImage.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
-            buttonImage.topAnchor.constraint(equalTo: buttonView.topAnchor, constant: 20),
-            buttonImage.centerXAnchor.constraint(equalTo: buttonView.centerXAnchor),
-            buttonImage.heightAnchor.constraint(equalToConstant: 25),
-            buttonImage.widthAnchor.constraint(equalToConstant: 30),
+            labelStack.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            labelStack.leftAnchor.constraint(equalTo: self.leftAnchor ,constant: 23),
             
-            button.topAnchor.constraint(equalTo: buttonView.topAnchor),
-            button.leftAnchor.constraint(equalTo: buttonView.leftAnchor),
-            button.rightAnchor.constraint(equalTo: buttonView.rightAnchor),
-            button.bottomAnchor.constraint(equalTo: buttonView.bottomAnchor),
+            userImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            userImage.leftAnchor.constraint(equalTo: labelStack.rightAnchor,constant: 25),
+            userImage.rightAnchor.constraint(equalTo: self.rightAnchor,constant: -23),
+            userImage.heightAnchor.constraint(equalToConstant: 45),
+            
         ])
-    }
-    
-    @objc func buttonTapped(on button: UIButton){
-        print("Tapped")
     }
     
 }

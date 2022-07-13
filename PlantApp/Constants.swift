@@ -33,7 +33,7 @@ enum Images {
         case .mainPageflowerImage2: return UIImage(named: "ic_flower_2")
         case .mainPageflowerImage3: return UIImage(named: "ic_flower_3")
         case .mainPagePlantImage: return UIImage(named: "ic_plant_1")
-        case .mainPageBackgroundImage: return UIImage(named: "ic_plant_1")
+        case .mainPageBackgroundImage: return UIImage(named: "ic_main_bg")
 
         }
     }
