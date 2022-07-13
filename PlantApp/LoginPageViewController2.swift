@@ -63,7 +63,7 @@ class LoginPageViewController2: UIViewController {
         ])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
-        view.spacing = 35
+        view.spacing = 29
         view.distribution = .fill
         return view
     }()
@@ -246,14 +246,14 @@ class LoginPageViewController2: UIViewController {
         view.addSubview(accauntStack)
         view.addSubview(loginButton)
         NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 70),
+            backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
             backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 23),
-            backButton.heightAnchor.constraint(equalToConstant: 23),
-            backButton.widthAnchor.constraint(equalToConstant: 23),
+            backButton.heightAnchor.constraint(equalToConstant: 20),
+            backButton.widthAnchor.constraint(equalToConstant: 20),
             mainStack.topAnchor.constraint(equalTo:backButton.bottomAnchor,constant: 35),
             mainStack.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 23),
             mainStack.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -23),
-            mainStack.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.32),
+            mainStack.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.40),
             nameTextFieldStack.topAnchor.constraint(equalTo: labelsStack.bottomAnchor, constant: 42),
             passwordTextFieldStack.topAnchor.constraint(equalTo: nameTextFieldStack.bottomAnchor, constant: 42), loginButton.topAnchor.constraint(equalTo: mainStack.bottomAnchor,constant: 40),
             loginButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 23),
@@ -312,9 +312,10 @@ class LoginPageViewController2: UIViewController {
                     if text.count < 10 {
                         floatingLabelTextField.errorMessage = "Invalid password"
                     }
-                    else {
+                    else if text.count > 10 {
+                        floatingLabelTextField.errorMessage = nil
                         textFiledsImage2.tintColor = Colors.onboardingBtnColor.color
-                        floatingLabelTextField.errorMessage = "Please write your password correct"
+                        floatingLabelTextField.lineColor = Colors.onboardingBtnColor.color!
                     }
                 }
             }

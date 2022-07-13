@@ -28,6 +28,7 @@ class MainViewController: UIViewController {
         view.register(
             UICollectionViewCell.self,
             forCellWithReuseIdentifier: "UICollectionViewCell")
+        view.register(Header.self, forSupplementaryViewOfKind: "firstHeaderId", withReuseIdentifier: "Header")
         return view
     }()
     
@@ -73,6 +74,7 @@ class MainViewController: UIViewController {
                 group.contentInsets = .init(top: 35, leading: 23, bottom: 0, trailing: 0.0)
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
+                section.contentInsets.bottom = 23
                 return section
             } else if sectionIndex == 2{
                 let item = NSCollectionLayoutItem(layoutSize: .init(
@@ -85,12 +87,14 @@ class MainViewController: UIViewController {
                 group.contentInsets = .init(top: 15, leading: 23, bottom: 0, trailing: 0.0)
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
-                section.boundarySupplementaryItems = [.init(
+                section.contentInsets.bottom = 25
+                let header: NSCollectionLayoutBoundarySupplementaryItem = .init(
                     layoutSize: .init(
                         widthDimension: .fractionalWidth(1),
                         heightDimension: .absolute(30)),
                     elementKind: "firstHeaderId",
-                    alignment: .topLeading)]
+                    alignment: .topLeading)
+                section.boundarySupplementaryItems = [header]
                 return section
             } else  {
                 let item = NSCollectionLayoutItem(layoutSize: .init(
@@ -103,6 +107,14 @@ class MainViewController: UIViewController {
                 group.contentInsets = .init(top: 35, leading: 17, bottom: 0, trailing: 0.0)
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
+                let header: NSCollectionLayoutBoundarySupplementaryItem = .init(
+                    layoutSize: .init(
+                        widthDimension: .fractionalWidth(1),
+                        heightDimension: .absolute(30)),
+                    elementKind: "firstHeaderId",
+                    alignment: .topLeading)
+                section.boundarySupplementaryItems = [header]
+                
                 return section
             }
         }
@@ -134,15 +146,56 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let supplementary = contectCollectionView.dequeueReusableSupplementaryView(ofKind: "firstHeaderId", withReuseIdentifier: "id", for: indexPath)
-        return supplementary
+        if indexPath.section == 2 {
+            guard let supplementary = contectCollectionView.dequeueReusableSupplementaryView(ofKind: "firstHeaderId", withReuseIdentifier: "Header", for: indexPath) as? Header else{
+                return UICollectionReusableView()
+            }
+            supplementary.label.text = "Plant Types"
+            return supplementary
+        } else if indexPath.section == 3 {
+            guard let supplementary = contectCollectionView.dequeueReusableSupplementaryView(ofKind: "firstHeaderId", withReuseIdentifier: "Header", for: indexPath) as? Header else{
+                return UICollectionReusableView()
+            }
+            supplementary.label.text = "Photography"
+            return supplementary
+        } else {
+             return UICollectionReusableView()
+        }
+        
     }
 }
 
 class Header: UICollectionReusableView {
-     
-//    lazy var label: UILabel = {
-//        
-//    }()
+    
+     lazy var label: UILabel = {
+        var view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.textColor = .black
+        view.font = .monospacedDigitSystemFont(ofSize: 17, weight: .bold)
+        return view
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupSubViews()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupSubViews() {
+        self.addSubview(label)
+       
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: self.topAnchor),
+            label.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 23),
+            label.rightAnchor.constraint(equalTo: self.rightAnchor),
+            label.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+        ])
+
+    }
+    
+    
 }
 
