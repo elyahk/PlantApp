@@ -9,7 +9,7 @@ import UIKit
 
 class MainCell: UICollectionViewCell {
     
-    lazy var nameLabel: UILabel = {
+  lazy var nameLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = "Hello"
@@ -43,9 +43,7 @@ class MainCell: UICollectionViewCell {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.image = Images.mainPageUserPhoto.image
-        view.backgroundColor = .clear
-        view.tintColor = .white
-        view.layer.cornerRadius = 15
+        view.contentMode = .scaleAspectFit
         return view
     }()
     lazy var backgroundImage: UIImageView = {
@@ -56,6 +54,19 @@ class MainCell: UICollectionViewCell {
         view.backgroundColor = .clear
         view.tintColor = .white
         view.layer.cornerRadius = 15
+        return view
+    }()
+    lazy var searchBar: UISearchBar = {
+        let view = UISearchBar()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.placeholder = "Search For Plants "
+        view.searchTextField.textColor = .black
+        view.searchTextField.font = .monospacedSystemFont(ofSize: 14, weight: .regular)
+        view.barTintColor = .white
+        view.searchTextField.backgroundColor = .white
+        view.layer.cornerRadius = 25
+        view.layer.masksToBounds = true
+        
         return view
     }()
   
@@ -73,7 +84,7 @@ class MainCell: UICollectionViewCell {
         self.addSubview(backgroundImage)
         self.addSubview(labelStack)
         self.addSubview(userImage)
-        
+        self.addSubview(searchBar)
         NSLayoutConstraint.activate([
             backgroundImage.topAnchor.constraint(equalTo: self.topAnchor),
             backgroundImage.leftAnchor.constraint(equalTo: self.leftAnchor),
@@ -84,9 +95,16 @@ class MainCell: UICollectionViewCell {
             labelStack.leftAnchor.constraint(equalTo: self.leftAnchor ,constant: 23),
             
             userImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            userImage.leftAnchor.constraint(equalTo: labelStack.rightAnchor,constant: 25),
+            userImage.leftAnchor.constraint(equalTo: labelStack.rightAnchor,constant: 23),
             userImage.rightAnchor.constraint(equalTo: self.rightAnchor,constant: -23),
-            userImage.heightAnchor.constraint(equalToConstant: 45),
+            userImage.heightAnchor.constraint(equalToConstant: 50),
+            
+            
+            searchBar.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 23),
+            searchBar.rightAnchor.constraint(equalTo: self.rightAnchor,constant: -23),
+            searchBar.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            searchBar.heightAnchor.constraint(equalToConstant: 50)
+            
             
         ])
     }

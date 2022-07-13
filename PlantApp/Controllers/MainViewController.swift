@@ -26,9 +26,11 @@ class MainViewController: UIViewController {
         view.delegate = self
         view.dataSource = self
         view.register(UICollectionViewCell.self, forCellWithReuseIdentifier:"UICollectionViewCell")
-        view.register(ButtonsCell.self,forCellWithReuseIdentifier: "ButtonsCell")
         view.register(MainCell.self,forCellWithReuseIdentifier: "MainCell")
+        view.register(ButtonsCell.self,forCellWithReuseIdentifier: "ButtonsCell")
         view.register(Header.self, forSupplementaryViewOfKind: "firstHeaderId", withReuseIdentifier: "Header")
+        view.register(TypePlantsCell.self,forCellWithReuseIdentifier: "TypePlantsCell")
+        view.register(PhotoPlantsCell.self,forCellWithReuseIdentifier: "PhotoPlantsCell")
         return view
     }()
     
@@ -60,7 +62,7 @@ class MainViewController: UIViewController {
                 item.contentInsets = .init(top: 3, leading: 3, bottom: 3, trailing: 3)
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(
                     widthDimension: .fractionalWidth(1),
-                    heightDimension: .fractionalHeight(0.35)), subitem: item, count: 1)
+                    heightDimension: .fractionalHeight(0.29)), subitem: item, count: 1)
                 return NSCollectionLayoutSection(group: group)
             }
             else if sectionIndex == 1 {
@@ -82,7 +84,7 @@ class MainViewController: UIViewController {
                     heightDimension: .fractionalHeight(1)))
                 item.contentInsets.trailing = 23
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(
-                    widthDimension: .fractionalWidth(1),
+                    widthDimension: .fractionalWidth(0.8),
                     heightDimension: .fractionalHeight(0.3)), subitem: item, count: 1)
                 group.contentInsets = .init(top: 15, leading: 23, bottom: 0, trailing: 0.0)
                 let section = NSCollectionLayoutSection(group: group)
@@ -149,13 +151,34 @@ extension MainViewController: UICollectionViewDelegate , UICollectionViewDataSou
                 return cell
             }
             return cell
+        } else  if indexPath.section == 2 {
+            guard let cell = contectCollectionView.dequeueReusableCell(withReuseIdentifier:"TypePlantsCell" , for: indexPath) as? TypePlantsCell else {
+                let cell = contectCollectionView.dequeueReusableCell(withReuseIdentifier:"UICollectionViewCell" , for: indexPath)
+                cell.backgroundColor = .red
+                return cell
+            }
+            return cell
+        } else if indexPath.section == 1 {
+            guard let cell = contectCollectionView.dequeueReusableCell(withReuseIdentifier:"ButtonsCell" , for: indexPath) as? ButtonsCell else {
+                let cell = contectCollectionView.dequeueReusableCell(withReuseIdentifier:"UICollectionViewCell" , for: indexPath)
+                cell.backgroundColor = .red
+                return cell
+            }
+            return cell
+        } else if indexPath.section == 3 {
+            guard let cell = contectCollectionView.dequeueReusableCell(withReuseIdentifier:"PhotoPlantsCell" , for: indexPath) as? PhotoPlantsCell else {
+                let cell = contectCollectionView.dequeueReusableCell(withReuseIdentifier:"UICollectionViewCell" , for: indexPath)
+                cell.backgroundColor = .red
+                return cell
+            }
+            return cell
         }
-        guard indexPath.section == 1, let cell = contectCollectionView.dequeueReusableCell(withReuseIdentifier:"ButtonsCell" , for: indexPath) as? ButtonsCell else {
+        
+        else  {
             let cell = contectCollectionView.dequeueReusableCell(withReuseIdentifier:"UICollectionViewCell" , for: indexPath)
             cell.backgroundColor = .red
             return cell
         }
-        return cell
         
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
