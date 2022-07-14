@@ -21,6 +21,8 @@ struct Images{
     static var redCactus = UIImage(named: "red_cactus_img")
     static var fatCactus = UIImage(named: "fat_cactus_img")
     static var circleCactus = UIImage(named: "circle_cactus_img")
+    static var circleCactusBg = UIImage(named: "circle_cactus_bg_img") 
+    static var heart = UIImage(named: "ic_heart")
 }
 
 struct Colors{

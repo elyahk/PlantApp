@@ -18,6 +18,7 @@
 		80AC9F9A2878B2DE006BC246 /* SpeciesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9F992878B2DE006BC246 /* SpeciesTableViewCell.swift */; };
 		80AC9F9C287A1D06006BC246 /* ListPlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9F9B287A1D06006BC246 /* ListPlantsViewController.swift */; };
 		80AC9FA22880BA91006BC246 /* ListPlantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9FA12880BA91006BC246 /* ListPlantsTableViewCell.swift */; };
+		80AC9FA42880CF52006BC246 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9FA32880CF52006BC246 /* ArticlesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		80AC9F992878B2DE006BC246 /* SpeciesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesTableViewCell.swift; sourceTree = "<group>"; };
 		80AC9F9B287A1D06006BC246 /* ListPlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlantsViewController.swift; sourceTree = "<group>"; };
 		80AC9FA12880BA91006BC246 /* ListPlantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlantsTableViewCell.swift; sourceTree = "<group>"; };
+		80AC9FA32880CF52006BC246 /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				80AC9F992878B2DE006BC246 /* SpeciesTableViewCell.swift */,
 				80AC9F9B287A1D06006BC246 /* ListPlantsViewController.swift */,
 				80AC9FA12880BA91006BC246 /* ListPlantsTableViewCell.swift */,
+				80AC9FA32880CF52006BC246 /* ArticlesViewController.swift */,
 				2CDF1DB32874960B00F0BC12 /* Assets.xcassets */,
 				2CDF1DB52874960B00F0BC12 /* LaunchScreen.storyboard */,
 				2CDF1DB82874960B00F0BC12 /* Info.plist */,
@@ -161,6 +164,7 @@
 				80AC9F9828788FD8006BC246 /* SpeciesViewController.swift in Sources */,
 				80AC9F6E2875A53E006BC246 /* SignUpViewController.swift in Sources */,
 				80AC9F6C28757284006BC246 /* Constants.swift in Sources */,
+				80AC9FA42880CF52006BC246 /* ArticlesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

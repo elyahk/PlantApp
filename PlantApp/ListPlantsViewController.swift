@@ -127,6 +127,15 @@ class ListPlantsViewController: UIViewController{
 
 extension ListPlantsViewController: UITableViewDelegate, UITableViewDataSource{
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         
+        let articlesViewController = ArticlesViewController()
+        articlesViewController.modalPresentationStyle = .fullScreen
+        articlesViewController.modalTransitionStyle = .crossDissolve
+        present(articlesViewController, animated: true)
+        
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "listPlantsTableViewCell") as? ListPlantsTableViewCell else { return UITableViewCell() }
         
