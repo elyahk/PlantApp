@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2CDF1DB42874960B00F0BC12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF1DB32874960B00F0BC12 /* Assets.xcassets */; };
 		2CDF1DB72874960B00F0BC12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF1DB52874960B00F0BC12 /* LaunchScreen.storyboard */; };
-		6E27D9AE2881C4F8005DA194 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E27D99A2881C4F7005DA194 /* Info.plist */; };
 		6E27D9AF2881C4F8005DA194 /* PhotoPlantsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E27D99B2881C4F7005DA194 /* PhotoPlantsCell.swift */; };
 		6E27D9B02881C4F8005DA194 /* TestCollectionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E27D99C2881C4F7005DA194 /* TestCollectionItemCell.swift */; };
 		6E27D9B12881C4F8005DA194 /* SpeciesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E27D99D2881C4F7005DA194 /* SpeciesTableViewCell.swift */; };
@@ -29,8 +28,8 @@
 		6E27D9BF2881C4F8005DA194 /* SpeciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E27D9AB2881C4F8005DA194 /* SpeciesViewController.swift */; };
 		6E27D9C02881C4F8005DA194 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E27D9AC2881C4F8005DA194 /* OnboardingViewController.swift */; };
 		6E27D9C12881C4F8005DA194 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E27D9AD2881C4F8005DA194 /* MainCell.swift */; };
+		6E27D9C32881C53C005DA194 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E27D9C22881C53C005DA194 /* Info.plist */; };
 		CE0F5EE4287AE8070009BE73 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F5EE3287AE8070009BE73 /* Tabbar.swift */; };
-		CE8AAF7D2876FC830099D325 /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = CE8AAF7C2876FC830099D325 /* SkyFloatingLabelTextField */; };
 		CE9ACA39287D9D870079337E /* TestCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ACA38287D9D870079337E /* TestCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,8 +37,6 @@
 		2CDF1DA72874960900F0BC12 /* PlantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CDF1DB32874960B00F0BC12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CDF1DB62874960B00F0BC12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2CDF1DB82874960B00F0BC12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6E27D99A2881C4F7005DA194 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E27D99B2881C4F7005DA194 /* PhotoPlantsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPlantsCell.swift; sourceTree = "<group>"; };
 		6E27D99C2881C4F7005DA194 /* TestCollectionItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCollectionItemCell.swift; sourceTree = "<group>"; };
 		6E27D99D2881C4F7005DA194 /* SpeciesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeciesTableViewCell.swift; sourceTree = "<group>"; };
@@ -59,6 +56,7 @@
 		6E27D9AB2881C4F8005DA194 /* SpeciesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeciesViewController.swift; sourceTree = "<group>"; };
 		6E27D9AC2881C4F8005DA194 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		6E27D9AD2881C4F8005DA194 /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		6E27D9C22881C53C005DA194 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE0F5EE3287AE8070009BE73 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
 		CE9ACA38287D9D870079337E /* TestCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,7 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE8AAF7D2876FC830099D325 /* SkyFloatingLabelTextField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +97,6 @@
 				6E27D9A62881C4F8005DA194 /* Constants.swift */,
 				6E27D9A22881C4F7005DA194 /* ContentButton.swift */,
 				6E27D9A52881C4F8005DA194 /* FirstScreenViewController.swift */,
-				6E27D99A2881C4F7005DA194 /* Info.plist */,
 				6E27D9A42881C4F8005DA194 /* ListPlantsTableViewCell.swift */,
 				6E27D9A02881C4F7005DA194 /* ListPlantsViewController.swift */,
 				6E27D9A72881C4F8005DA194 /* LoginPageViewController2.swift */,
@@ -119,7 +115,6 @@
 				CE9ACA43287F05E40079337E /* Assets && others */,
 				CE9ACA38287D9D870079337E /* TestCollectionCell.swift */,
 				CE0F5EE3287AE8070009BE73 /* Tabbar.swift */,
-				2CDF1DB82874960B00F0BC12 /* Info.plist */,
 			);
 			path = PlantApp;
 			sourceTree = "<group>";
@@ -134,6 +129,7 @@
 		CE9ACA43287F05E40079337E /* Assets && others */ = {
 			isa = PBXGroup;
 			children = (
+				6E27D9C22881C53C005DA194 /* Info.plist */,
 				2CDF1DB32874960B00F0BC12 /* Assets.xcassets */,
 				2CDF1DB52874960B00F0BC12 /* LaunchScreen.storyboard */,
 			);
@@ -164,7 +160,6 @@
 			);
 			name = PlantApp;
 			packageProductDependencies = (
-				CE8AAF7C2876FC830099D325 /* SkyFloatingLabelTextField */,
 			);
 			productName = PlantApp;
 			productReference = 2CDF1DA72874960900F0BC12 /* PlantApp.app */;
@@ -195,7 +190,6 @@
 			);
 			mainGroup = 2CDF1D9E2874960900F0BC12;
 			packageReferences = (
-				CE8AAF7B2876FC830099D325 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */,
 			);
 			productRefGroup = 2CDF1DA82874960900F0BC12 /* Products */;
 			projectDirPath = "";
@@ -213,7 +207,7 @@
 			files = (
 				2CDF1DB72874960B00F0BC12 /* LaunchScreen.storyboard in Resources */,
 				2CDF1DB42874960B00F0BC12 /* Assets.xcassets in Resources */,
-				6E27D9AE2881C4F8005DA194 /* Info.plist in Resources */,
+				6E27D9C32881C53C005DA194 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,25 +448,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		CE8AAF7B2876FC830099D325 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Skyscanner/SkyFloatingLabelTextField.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		CE8AAF7C2876FC830099D325 /* SkyFloatingLabelTextField */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE8AAF7B2876FC830099D325 /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */;
-			productName = SkyFloatingLabelTextField;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2CDF1D9F2874960900F0BC12 /* Project object */;
 }
