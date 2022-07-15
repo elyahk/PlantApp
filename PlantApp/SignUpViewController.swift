@@ -8,7 +8,7 @@
 import UIKit
 
 class SignUpViewController: UIViewController{
-    
+
     private lazy var testCollectionView: UICollectionView = {
         let view = UICollectionView.init(frame: .zero, collectionViewLayout: createLayout())
         view.translatesAutoresizingMaskIntoConstraints = false

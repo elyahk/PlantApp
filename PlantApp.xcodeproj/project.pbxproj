@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18A906D228758C150043E67D /* FirstScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A906D128758C150043E67D /* FirstScreenViewController.swift */; };
+		18CF17162875E34000D2E57F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF17152875E33F00D2E57F /* LoginViewController.swift */; };
 		2C1A86E228749AF4009600F9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1A86E128749AF4009600F9 /* OnboardingViewController.swift */; };
+		2CB8B8EC287737DD001E53B6 /* TestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB8B8EB287737DD001E53B6 /* TestCollectionViewController.swift */; };
+		2CB8B8EE287738B8001E53B6 /* TestCollectionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB8B8ED287738B8001E53B6 /* TestCollectionItemCell.swift */; };
+		2CCA95FA287F20C500C64A93 /* CollectionViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCA95F9287F20C500C64A93 /* CollectionViewControler.swift */; };
 		2CDF1DAB2874960900F0BC12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF1DAA2874960900F0BC12 /* AppDelegate.swift */; };
 		2CDF1DB42874960B00F0BC12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF1DB32874960B00F0BC12 /* Assets.xcassets */; };
 		2CDF1DB72874960B00F0BC12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF1DB52874960B00F0BC12 /* LaunchScreen.storyboard */; };
 		80AC9F6C28757284006BC246 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9F6B28757284006BC246 /* Constants.swift */; };
 		80AC9F6E2875A53E006BC246 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9F6D2875A53E006BC246 /* SignUpViewController.swift */; };
+<<<<<<< HEAD
 		CE0F5EE4287AE8070009BE73 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F5EE3287AE8070009BE73 /* Tabbar.swift */; };
 		CE0F5EE6287AEAA60009BE73 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F5EE5287AEAA60009BE73 /* MainViewController.swift */; };
 		CE8AAF7A2876CC6F0099D325 /* LoginPageViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8AAF792876CC6F0099D325 /* LoginPageViewController2.swift */; };
@@ -23,10 +29,22 @@
 		CE9ACA40287F02930079337E /* TypePlantsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ACA3F287F02930079337E /* TypePlantsCell.swift */; };
 		CE9ACA45287F09C00079337E /* PhotoPlantsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ACA44287F09C00079337E /* PhotoPlantsCell.swift */; };
 		CE9ACA47287F0FDE0079337E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ACA46287F0FDE0079337E /* TabBarController.swift */; };
+=======
+		80AC9F9628774687006BC246 /* ContentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9F9528774687006BC246 /* ContentButton.swift */; };
+		80AC9F9828788FD8006BC246 /* SpeciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9F9728788FD8006BC246 /* SpeciesViewController.swift */; };
+		80AC9F9A2878B2DE006BC246 /* SpeciesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9F992878B2DE006BC246 /* SpeciesTableViewCell.swift */; };
+		80AC9F9C287A1D06006BC246 /* ListPlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9F9B287A1D06006BC246 /* ListPlantsViewController.swift */; };
+		80AC9FA22880BA91006BC246 /* ListPlantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9FA12880BA91006BC246 /* ListPlantsTableViewCell.swift */; };
+>>>>>>> main
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18A906D128758C150043E67D /* FirstScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenViewController.swift; sourceTree = "<group>"; };
+		18CF17152875E33F00D2E57F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2C1A86E128749AF4009600F9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		2CB8B8EB287737DD001E53B6 /* TestCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewController.swift; sourceTree = "<group>"; };
+		2CB8B8ED287738B8001E53B6 /* TestCollectionItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionItemCell.swift; sourceTree = "<group>"; };
+		2CCA95F9287F20C500C64A93 /* CollectionViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewControler.swift; sourceTree = "<group>"; };
 		2CDF1DA72874960900F0BC12 /* PlantApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CDF1DAA2874960900F0BC12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CDF1DB32874960B00F0BC12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -34,6 +52,7 @@
 		2CDF1DB82874960B00F0BC12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80AC9F6B28757284006BC246 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		80AC9F6D2875A53E006BC246 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		CE0F5EE3287AE8070009BE73 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
 		CE0F5EE5287AEAA60009BE73 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE8AAF792876CC6F0099D325 /* LoginPageViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController2.swift; sourceTree = "<group>"; };
@@ -43,6 +62,13 @@
 		CE9ACA3F287F02930079337E /* TypePlantsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypePlantsCell.swift; sourceTree = "<group>"; };
 		CE9ACA44287F09C00079337E /* PhotoPlantsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPlantsCell.swift; sourceTree = "<group>"; };
 		CE9ACA46287F0FDE0079337E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+=======
+		80AC9F9528774687006BC246 /* ContentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentButton.swift; sourceTree = "<group>"; };
+		80AC9F9728788FD8006BC246 /* SpeciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesViewController.swift; sourceTree = "<group>"; };
+		80AC9F992878B2DE006BC246 /* SpeciesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesTableViewCell.swift; sourceTree = "<group>"; };
+		80AC9F9B287A1D06006BC246 /* ListPlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlantsViewController.swift; sourceTree = "<group>"; };
+		80AC9FA12880BA91006BC246 /* ListPlantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlantsTableViewCell.swift; sourceTree = "<group>"; };
+>>>>>>> main
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +88,7 @@
 			children = (
 				2CDF1DA92874960900F0BC12 /* PlantApp */,
 				2CDF1DA82874960900F0BC12 /* Products */,
+				E9919BEB6BC1CD1491EFFB4D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +103,7 @@
 		2CDF1DA92874960900F0BC12 /* PlantApp */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				CE9ACA42287F05B70079337E /* App */,
 				CE9ACA41287F05940079337E /* Controllers */,
 				CE9ACA3C287ED4260079337E /* mainViewControllersCell */,
@@ -124,8 +152,35 @@
 			children = (
 				80AC9F6B28757284006BC246 /* Constants.swift */,
 				2CDF1DB32874960B00F0BC12 /* Assets.xcassets */,
+=======
+				2CDF1DAA2874960900F0BC12 /* AppDelegate.swift */,
+				80AC9F6D2875A53E006BC246 /* SignUpViewController.swift */,
+				80AC9F9728788FD8006BC246 /* SpeciesViewController.swift */,
+				80AC9F992878B2DE006BC246 /* SpeciesTableViewCell.swift */,
+				80AC9F9B287A1D06006BC246 /* ListPlantsViewController.swift */,
+				80AC9FA12880BA91006BC246 /* ListPlantsTableViewCell.swift */,
+				80AC9F9B287A1D06006BC246 /* ListPlantViewController.swift */,
+				2CB8B8EB287737DD001E53B6 /* TestCollectionViewController.swift */,
+				2CB8B8ED287738B8001E53B6 /* TestCollectionItemCell.swift */,
+				2CDF1DB32874960B00F0BC12 /* Assets.xcassets */,
+				2CDF1DB52874960B00F0BC12 /* LaunchScreen.storyboard */,
+				2CDF1DB82874960B00F0BC12 /* Info.plist */,
+				2C1A86E128749AF4009600F9 /* OnboardingViewController.swift */,
+				18A906D128758C150043E67D /* FirstScreenViewController.swift */,
+				18CF17152875E33F00D2E57F /* LoginViewController.swift */,
+				80AC9F6B28757284006BC246 /* Constants.swift */,
+				80AC9F9528774687006BC246 /* ContentButton.swift */,
+				2CCA95F9287F20C500C64A93 /* CollectionViewControler.swift */,
+>>>>>>> main
 			);
 			path = "Assets && others";
+			sourceTree = "<group>";
+		};
+		E9919BEB6BC1CD1491EFFB4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,16 +259,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				CE9ACA45287F09C00079337E /* PhotoPlantsCell.swift in Sources */,
 				CE9ACA47287F0FDE0079337E /* TabBarController.swift in Sources */,
 				CE9ACA40287F02930079337E /* TypePlantsCell.swift in Sources */,
 				CE0F5EE6287AEAA60009BE73 /* MainViewController.swift in Sources */,
+=======
+				80AC9F9A2878B2DE006BC246 /* SpeciesTableViewCell.swift in Sources */,
+>>>>>>> main
 				2C1A86E228749AF4009600F9 /* OnboardingViewController.swift in Sources */,
+				80AC9F9C287A1D06006BC246 /* ListPlantsViewController.swift in Sources */,
+				80AC9F9C287A1D06006BC246 /* ListPlantViewController.swift in Sources */,
+				2CCA95FA287F20C500C64A93 /* CollectionViewControler.swift in Sources */,
+				18CF17162875E34000D2E57F /* LoginViewController.swift in Sources */,
+				2CB8B8EE287738B8001E53B6 /* TestCollectionItemCell.swift in Sources */,
+				18A906D228758C150043E67D /* FirstScreenViewController.swift in Sources */,
 				2CDF1DAB2874960900F0BC12 /* AppDelegate.swift in Sources */,
+<<<<<<< HEAD
 				CE9ACA3E287ED6140079337E /* ButtonsCell.swift in Sources */,
 				CE8AAF7A2876CC6F0099D325 /* LoginPageViewController2.swift in Sources */,
 				CE0F5EE4287AE8070009BE73 /* Tabbar.swift in Sources */,
+=======
+				80AC9FA22880BA91006BC246 /* ListPlantsTableViewCell.swift in Sources */,
+				80AC9F9628774687006BC246 /* ContentButton.swift in Sources */,
+				80AC9F9828788FD8006BC246 /* SpeciesViewController.swift in Sources */,
+>>>>>>> main
 				80AC9F6E2875A53E006BC246 /* SignUpViewController.swift in Sources */,
+				2CB8B8EC287737DD001E53B6 /* TestCollectionViewController.swift in Sources */,
 				80AC9F6C28757284006BC246 /* Constants.swift in Sources */,
 				CE9ACA39287D9D870079337E /* TestCollectionCell.swift in Sources */,
 				CE9ACA3B287ED41D0079337E /* MainCell.swift in Sources */,
