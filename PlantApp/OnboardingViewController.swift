@@ -22,6 +22,7 @@ class OnboardingViewController: UIViewController {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFit
+<<<<<<< HEAD
 <<<<<<< HEAD:PlantApp/Controllers/OnboardingViewController.swift
         view.image = Images.identifyPageImage.image
 //        Constants.OnboardingImages.identifyPageImage
@@ -29,6 +30,10 @@ class OnboardingViewController: UIViewController {
         view.image = 
         Images.identifyPageImage
 >>>>>>> main:PlantApp/OnboardingViewController.swift
+=======
+        view.image = 
+        Images.identifyPageImage
+>>>>>>> main
 
         return view
     }()
@@ -36,6 +41,7 @@ class OnboardingViewController: UIViewController {
     lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
+<<<<<<< HEAD
 <<<<<<< HEAD:PlantApp/Controllers/OnboardingViewController.swift
         view.text =  Labels.identifyPageTitleLabel.label
         view.font = .systemFont(ofSize: 19.0, weight: .bold)
@@ -45,6 +51,11 @@ class OnboardingViewController: UIViewController {
         view.font = .systemFont(ofSize: 19.0, weight: .bold)
         view.textColor = Colors.mainTitleColor
 >>>>>>> main:PlantApp/OnboardingViewController.swift
+=======
+        view.text = TitleLabels.identifyPageTitleLabel
+        view.font = .systemFont(ofSize: 19.0, weight: .bold)
+        view.textColor = Colors.mainTitleColor
+>>>>>>> main
         view.setContentHuggingPriority(.defaultHigh, for: .vertical)
         view.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         view.textAlignment = .center
@@ -55,6 +66,7 @@ class OnboardingViewController: UIViewController {
     lazy var descriptionLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
+<<<<<<< HEAD
 <<<<<<< HEAD:PlantApp/Controllers/OnboardingViewController.swift
         view.text = Labels.identifyPageDescription.label
 =======
@@ -63,11 +75,15 @@ class OnboardingViewController: UIViewController {
 =======
         view.text = DescriptionLabels.identifyPageDescription
 >>>>>>> main:PlantApp/OnboardingViewController.swift
+=======
+        view.text = DescriptionLabels.identifyPageDescription
+>>>>>>> main
         view.numberOfLines = 3
         view.minimumScaleFactor = 0.7
         view.contentMode = .top
         view.textAlignment = .center
         view.font = .systemFont(ofSize: 13.0, weight: .regular)
+<<<<<<< HEAD
 <<<<<<< HEAD:PlantApp/Controllers/OnboardingViewController.swift
 <<<<<<< HEAD:PlantApp/Controllers/OnboardingViewController.swift
         view.textColor = Colors.mainTitleColor.color
@@ -77,6 +93,9 @@ class OnboardingViewController: UIViewController {
 =======
         view.textColor = Colors.mainTitleColor
 >>>>>>> main:PlantApp/OnboardingViewController.swift
+=======
+        view.textColor = Colors.mainTitleColor
+>>>>>>> main
         view.setContentHuggingPriority(.defaultLow, for: .vertical)
         view.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
 
@@ -98,6 +117,7 @@ class OnboardingViewController: UIViewController {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFit
+<<<<<<< HEAD
 <<<<<<< HEAD:PlantApp/Controllers/OnboardingViewController.swift
 <<<<<<< HEAD:PlantApp/Controllers/OnboardingViewController.swift
         view.image = Images.identifyPageDot.image
@@ -109,6 +129,10 @@ class OnboardingViewController: UIViewController {
         view.image = 
         Images.identifyPageDot
 >>>>>>> main:PlantApp/OnboardingViewController.swift
+=======
+        view.image = 
+        Images.identifyPageDot
+>>>>>>> main
         view.setContentHuggingPriority(.defaultHigh, for: .vertical)
         view.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
 
@@ -130,6 +154,7 @@ class OnboardingViewController: UIViewController {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("Next", for: .normal)
+<<<<<<< HEAD
 <<<<<<< HEAD:PlantApp/Controllers/OnboardingViewController.swift
 <<<<<<< HEAD:PlantApp/Controllers/OnboardingViewController.swift
         view.backgroundColor = Colors.onboardingBtnColor.color
@@ -139,6 +164,9 @@ class OnboardingViewController: UIViewController {
 =======
         view.backgroundColor = Colors.onboardingBtnColor
 >>>>>>> main:PlantApp/OnboardingViewController.swift
+=======
+        view.backgroundColor = Colors.onboardingBtnColor
+>>>>>>> main
         view.setTitleColor(.white, for: .normal)
         view.addTarget(self, action: #selector(nextButtonTapped(on:)), for: .touchUpInside)
 
@@ -148,6 +176,7 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+<<<<<<< HEAD
 <<<<<<< HEAD:PlantApp/Controllers/OnboardingViewController.swift
 <<<<<<< HEAD:PlantApp/Controllers/OnboardingViewController.swift
         view.backgroundColor = Colors.mainBgColor.color
@@ -157,6 +186,9 @@ class OnboardingViewController: UIViewController {
 =======
         view.backgroundColor = Colors.mainBgColor
 >>>>>>> main:PlantApp/OnboardingViewController.swift
+=======
+        view.backgroundColor = Colors.mainBgColor
+>>>>>>> main
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -197,7 +229,11 @@ class OnboardingViewController: UIViewController {
         case 3:
             page = Page.readPage
         default:
+<<<<<<< HEAD
             let signUpViewController = LoginPageViewController2()
+=======
+            let signUpViewController = FirstScreenViewController()
+>>>>>>> main
             signUpViewController.modalTransitionStyle = .crossDissolve
             signUpViewController.modalPresentationStyle = .fullScreen
             present(signUpViewController, animated: true)
@@ -211,6 +247,7 @@ class OnboardingViewController: UIViewController {
         case .identifyPage:
             print("1")
         case .learPage:
+<<<<<<< HEAD
 <<<<<<< HEAD:PlantApp/Controllers/OnboardingViewController.swift
 <<<<<<< HEAD:PlantApp/Controllers/OnboardingViewController.swift
             mainImageView.image = Images.learnPageImage.image
@@ -225,6 +262,8 @@ class OnboardingViewController: UIViewController {
 =======
 =======
 >>>>>>> main:PlantApp/OnboardingViewController.swift
+=======
+>>>>>>> main
             mainImageView.image = 
             Images.learnPageImage
             titleLabel.text = TitleLabels.learnPageTitleLabel
@@ -238,10 +277,13 @@ class OnboardingViewController: UIViewController {
             descriptionLabel.text = DescriptionLabels.readPageDescription
             dotImageView.image = 
             Images.readPageDot
+<<<<<<< HEAD
 <<<<<<< HEAD:PlantApp/Controllers/OnboardingViewController.swift
 >>>>>>> main:PlantApp/OnboardingViewController.swift
 =======
 >>>>>>> main:PlantApp/OnboardingViewController.swift
+=======
+>>>>>>> main
             nextButton.setTitle("Sign up", for: .normal)
         }
     }

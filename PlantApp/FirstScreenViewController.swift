@@ -46,14 +46,18 @@ class FirstScreenViewController: UINavigationController{
     
     lazy var usernameTextfield: UITextField = {
         let view = UITextField()
+<<<<<<< HEAD
 //        view.inactiveColor = UIColor.gray
 //        view.activeColor = UIColor(named: "ic_color")
+=======
+>>>>>>> main
         view.translatesAutoresizingMaskIntoConstraints = false
         view.placeholder = "Taylor Swift"
         view.textColor = .black
 
         return view
     }()
+<<<<<<< HEAD
     
 //    lazy var lineView: UIView = {
 //        let view = UIView()
@@ -62,6 +66,9 @@ class FirstScreenViewController: UINavigationController{
 //        return view
 //    }()
     
+=======
+
+>>>>>>> main
     lazy var checkUsernameIcon: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -82,8 +89,11 @@ class FirstScreenViewController: UINavigationController{
     
     lazy var passwordTextfield: UITextField = {
         let view = UITextField()
+<<<<<<< HEAD
 //        view.activeColor = UIColor(named: "ic_color")
 //        view.inactiveColor = UIColor.gray
+=======
+>>>>>>> main
         view.translatesAutoresizingMaskIntoConstraints = false
         view.placeholder = "Password"
         view.textColor = .gray
@@ -206,7 +216,10 @@ class FirstScreenViewController: UINavigationController{
         let view = UIStackView(arrangedSubviews: [accountLabel,signUpButton])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .horizontal
+<<<<<<< HEAD
 //        view.distribution = .fillEqually
+=======
+>>>>>>> main
         view.center = self.view.center
         view.spacing = 1.0
         
@@ -217,7 +230,10 @@ class FirstScreenViewController: UINavigationController{
         let view = UIStackView(arrangedSubviews: [helloLabel,subtitleLabel,usernameLabel,textfieldStack,infoStack,loginButton,signStack])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
+<<<<<<< HEAD
 //        view.distribution = .fillEqually
+=======
+>>>>>>> main
         view.spacing = 16.0
         
         return view
@@ -240,6 +256,7 @@ class FirstScreenViewController: UINavigationController{
             contentStackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -23.0),
             contentStackView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.50),
             
+<<<<<<< HEAD
 //            lineView2.bottomAnchor.constraint(equalTo: textfieldStack.bottomAnchor, constant: -150.0),
             
             signStack.rightAnchor.constraint(equalTo: contentStackView.rightAnchor, constant: -70.0),
@@ -249,6 +266,12 @@ class FirstScreenViewController: UINavigationController{
 //            lineView.heightAnchor.constraint(equalToConstant: 2.0),
 //            lineView2.heightAnchor.constraint(equalToConstant: 2.0),
             
+=======
+            signStack.rightAnchor.constraint(equalTo: contentStackView.rightAnchor, constant: -70.0),
+            
+            signStack.heightAnchor.constraint(equalToConstant: 10.0),
+
+>>>>>>> main
             checkRememberButton.heightAnchor.constraint(equalTo: infoStack.heightAnchor, multiplier: 0.23),
             checkRememberButton.widthAnchor.constraint(equalToConstant: 15.0),
             
@@ -283,12 +306,17 @@ class FirstScreenViewController: UINavigationController{
     }
     
     @objc func loginPressed(){
+<<<<<<< HEAD
         let viewController = LoginViewController()
+=======
+        let viewController = UIViewController()
+>>>>>>> main
         viewController.modalTransitionStyle = .flipHorizontal
         viewController.modalPresentationStyle = .fullScreen
         
         present(viewController, animated: true)
     }
+<<<<<<< HEAD
     
 //    func changeCheckIcon()->UIImage {
 //        if usernameTextfield.inactiveColor == UIColor.gray{
@@ -315,3 +343,6 @@ class FirstScreenViewController: UINavigationController{
 //            navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 //        }
 //}
+=======
+}
+>>>>>>> main
