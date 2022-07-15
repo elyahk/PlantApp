@@ -300,6 +300,7 @@ class LoginPageViewController2: UIViewController {
                         floatingLabelTextField.errorMessage = "Invalid name"
                     }
                     else {
+                        floatingLabelTextField.errorMessage = nil
                         textFiledsImage.tintColor = Colors.onboardingBtnColor.color
                         floatingLabelTextField.errorMessage = "Please write your name"
                     }
