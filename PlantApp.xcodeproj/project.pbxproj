@@ -171,9 +171,19 @@
 				80AC9F6B28757284006BC246 /* Constants.swift */,
 				80AC9F9528774687006BC246 /* ContentButton.swift */,
 				2CCA95F9287F20C500C64A93 /* CollectionViewControler.swift */,
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 			);
 			path = "Assets && others";
+			sourceTree = "<group>";
+		};
+		E9919BEB6BC1CD1491EFFB4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E9919BEB6BC1CD1491EFFB4D /* Frameworks */ = {
@@ -260,10 +270,14 @@
 			buildActionMask = 2147483647;
 			files = (
 <<<<<<< HEAD
+<<<<<<< HEAD
 				CE9ACA45287F09C00079337E /* PhotoPlantsCell.swift in Sources */,
 				CE9ACA47287F0FDE0079337E /* TabBarController.swift in Sources */,
 				CE9ACA40287F02930079337E /* TypePlantsCell.swift in Sources */,
 				CE0F5EE6287AEAA60009BE73 /* MainViewController.swift in Sources */,
+=======
+				80AC9F9A2878B2DE006BC246 /* SpeciesTableViewCell.swift in Sources */,
+>>>>>>> main
 =======
 				80AC9F9A2878B2DE006BC246 /* SpeciesTableViewCell.swift in Sources */,
 >>>>>>> main
@@ -276,9 +290,15 @@
 				18A906D228758C150043E67D /* FirstScreenViewController.swift in Sources */,
 				2CDF1DAB2874960900F0BC12 /* AppDelegate.swift in Sources */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				CE9ACA3E287ED6140079337E /* ButtonsCell.swift in Sources */,
 				CE8AAF7A2876CC6F0099D325 /* LoginPageViewController2.swift in Sources */,
 				CE0F5EE4287AE8070009BE73 /* Tabbar.swift in Sources */,
+=======
+				80AC9FA22880BA91006BC246 /* ListPlantsTableViewCell.swift in Sources */,
+				80AC9F9628774687006BC246 /* ContentButton.swift in Sources */,
+				80AC9F9828788FD8006BC246 /* SpeciesViewController.swift in Sources */,
+>>>>>>> main
 =======
 				80AC9FA22880BA91006BC246 /* ListPlantsTableViewCell.swift in Sources */,
 				80AC9F9628774687006BC246 /* ContentButton.swift in Sources */,
