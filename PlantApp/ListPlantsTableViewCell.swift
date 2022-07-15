@@ -122,7 +122,7 @@ class ListPlantsTableViewCell: UITableViewCell{
         let view = UIStackView(arrangedSubviews: [plantName, plantTypeStack, descriptionLabel, descriptionText])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
-        view.spacing = 10
+        view.spacing = 6
         
         return view
     }()
