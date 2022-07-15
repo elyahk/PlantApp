@@ -30,11 +30,16 @@
 		CE9ACA45287F09C00079337E /* PhotoPlantsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ACA44287F09C00079337E /* PhotoPlantsCell.swift */; };
 		CE9ACA47287F0FDE0079337E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ACA46287F0FDE0079337E /* TabBarController.swift */; };
 =======
+=======
+>>>>>>> main
 		80AC9F9628774687006BC246 /* ContentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9F9528774687006BC246 /* ContentButton.swift */; };
 		80AC9F9828788FD8006BC246 /* SpeciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9F9728788FD8006BC246 /* SpeciesViewController.swift */; };
 		80AC9F9A2878B2DE006BC246 /* SpeciesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9F992878B2DE006BC246 /* SpeciesTableViewCell.swift */; };
 		80AC9F9C287A1D06006BC246 /* ListPlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9F9B287A1D06006BC246 /* ListPlantsViewController.swift */; };
 		80AC9FA22880BA91006BC246 /* ListPlantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9FA12880BA91006BC246 /* ListPlantsTableViewCell.swift */; };
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 /* End PBXBuildFile section */
 
@@ -53,6 +58,7 @@
 		80AC9F6B28757284006BC246 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		80AC9F6D2875A53E006BC246 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 		CE0F5EE3287AE8070009BE73 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
 		CE0F5EE5287AEAA60009BE73 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE8AAF792876CC6F0099D325 /* LoginPageViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController2.swift; sourceTree = "<group>"; };
@@ -63,11 +69,16 @@
 		CE9ACA44287F09C00079337E /* PhotoPlantsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPlantsCell.swift; sourceTree = "<group>"; };
 		CE9ACA46287F0FDE0079337E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 =======
+=======
+>>>>>>> main
 		80AC9F9528774687006BC246 /* ContentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentButton.swift; sourceTree = "<group>"; };
 		80AC9F9728788FD8006BC246 /* SpeciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesViewController.swift; sourceTree = "<group>"; };
 		80AC9F992878B2DE006BC246 /* SpeciesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesTableViewCell.swift; sourceTree = "<group>"; };
 		80AC9F9B287A1D06006BC246 /* ListPlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlantsViewController.swift; sourceTree = "<group>"; };
 		80AC9FA12880BA91006BC246 /* ListPlantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlantsTableViewCell.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 /* End PBXFileReference section */
 
@@ -103,6 +114,7 @@
 		2CDF1DA92874960900F0BC12 /* PlantApp */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 <<<<<<< HEAD
 				CE9ACA42287F05B70079337E /* App */,
 				CE9ACA41287F05940079337E /* Controllers */,
@@ -153,6 +165,8 @@
 				80AC9F6B28757284006BC246 /* Constants.swift */,
 				2CDF1DB32874960B00F0BC12 /* Assets.xcassets */,
 =======
+=======
+>>>>>>> main
 				2CDF1DAA2874960900F0BC12 /* AppDelegate.swift */,
 				80AC9F6D2875A53E006BC246 /* SignUpViewController.swift */,
 				80AC9F9728788FD8006BC246 /* SpeciesViewController.swift */,
