@@ -280,7 +280,7 @@ class LoginPageViewController2: UIViewController {
             vc.modalTransitionStyle = .flipHorizontal
             vc.modalPresentationStyle = .fullScreen
             let mainCell = MainCell()
-            mainCell.nameLabel.text = "Hello\(nameTextField.text!)" 
+            mainCell.nameLabel.text = "Hello \(nameTextField.text!)" 
             present(vc, animated: true)
         } else {
             showAlert()
