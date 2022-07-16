@@ -1,0 +1,203 @@
+//
+//  ProfileViewController.swift
+//  PlantApp
+//
+//  Created by APPLE on 16/07/22.
+//
+
+import UIKit
+
+class ProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
+    
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let cell = ProfileCollectionViewCell()
+//
+//        if indexPath.item == 0{
+//
+//        }
+//    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {ç
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = profileCollectionView.dequeueReusableCell(withReuseIdentifier: "ProfileCollectionViewCell", for: indexPath) as? ProfileCollectionViewCell else{
+            return UICollectionViewCell()
+        }
+        if indexPath.item == 0{
+            cell.collectionLabel.text = "ARTICLES"
+        }else if indexPath.item == 1{
+            cell.collectionLabel.text = "SPECIES"
+        }else if indexPath.item == 2{
+            cell.collectionLabel.text = "LIKES"
+        }
+        cell.collectionLabel.layer.cornerRadius = 20.0
+        return cell
+    }
+    
+    lazy var profileCollectionView: UICollectionView = {
+        let view = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.register(ProfileCollectionViewCell.self, forCellWithReuseIdentifier: "ProfileCollectionViewCell")
+        view.dataSource = self
+        view.delegate = self
+        
+        return view
+    }()
+    
+    func createLayout() -> UICollectionViewLayout{
+        
+        return UICollectionViewCompositionalLayout { sectionIndex, _ in
+            
+            let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+            item.contentInsets.trailing = 5.0
+            
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/20)), subitem: item, count: 3)
+            
+            return NSCollectionLayoutSection(group: group)
+        }
+    }
+    
+    lazy var backGroundImage: UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.image = UIImage(named: "profile_bg")
+        view.contentMode = .scaleToFill
+        
+        return view
+    }()
+    
+    lazy var backButton: UIButton = {
+        let view = UIButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .topLeft
+        view.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
+        view.tintColor = .white
+        
+        return view
+    }()
+    
+    lazy var avatarImageView: UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.image = UIImage(named: "ic_userPhoto")
+        view.contentMode = .scaleAspectFill
+        view.backgroundColor = .black
+        view.tintColor = .blue
+        
+        return view
+    }()
+    
+    lazy var edtIconButton: UIButton = {
+        let view = UIButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.setImage(UIImage(systemName: "ellipsis"), for: .normal)
+        view.tintColor = .white
+        
+        return view
+    }()
+    
+    lazy var nameLabel: UILabel = {
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.text = "Taylor Swift"
+        view.textColor = .white
+        view.textAlignment = .center
+        view.font = .systemFont(ofSize: 23.0, weight: .bold)
+        
+        return view
+    }()
+    
+    
+    lazy var phoneNumberLabel: UILabel = {
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.text = "Los Angeles, California"
+        view.textColor = .white
+        view.textAlignment = .left
+        view.font = .systemFont(ofSize: 14.0, weight: .medium)
+        
+        return view
+    }()
+    
+    lazy var locationIcon: UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .right
+        view.image = UIImage(systemName: "mappin.circle.fill")
+        view.tintColor = .white
+        
+        return view
+    }()
+    
+    lazy var stackView1: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [locationIcon,phoneNumberLabel])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .horizontal
+        view.spacing = 3.0
+        
+        return view
+    }()
+    
+    lazy var stackView2: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [nameLabel,stackView1])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .vertical
+        
+        return view
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        setSubviews()
+    }
+    
+    func setSubviews(){
+        
+        view.addSubview(backGroundImage)
+        view.addSubview(stackView2)
+        view.addSubview(backButton)
+        view.addSubview(avatarImageView)
+        view.addSubview(edtIconButton)
+        view.addSubview(profileCollectionView)
+        
+        NSLayoutConstraint.activate([
+            
+            backGroundImage.topAnchor.constraint(equalTo: view.topAnchor),
+            backGroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backGroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backGroundImage.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.31),
+            
+            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5.0),
+            backButton.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 10.0),
+            backButton.heightAnchor.constraint(equalToConstant: 30),
+            backButton.widthAnchor.constraint(equalToConstant: 30),
+            
+            edtIconButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5.0),
+            edtIconButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -10.0),
+            edtIconButton.heightAnchor.constraint(equalToConstant: 30),
+            edtIconButton.widthAnchor.constraint(equalToConstant: 30),
+            
+            avatarImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5.0),
+            avatarImageView.rightAnchor.constraint(equalTo: edtIconButton.leftAnchor, constant: -110.0),
+            avatarImageView.leftAnchor.constraint(equalTo: backButton.rightAnchor, constant: 110.0),
+            avatarImageView.heightAnchor.constraint(equalTo: avatarImageView.widthAnchor),
+            
+            stackView2.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor,constant: 20),
+            stackView2.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -20),
+            stackView2.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 20),
+            stackView2.heightAnchor.constraint(equalToConstant: 60),
+            phoneNumberLabel.widthAnchor.constraint(equalTo: stackView2.widthAnchor, multiplier: 0.7),
+            
+            profileCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -23.0),
+            profileCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 23.0),
+            profileCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            profileCollectionView.topAnchor.constraint(equalTo: backGroundImage.bottomAnchor, constant: 20.0),
+        ])
+        view.layoutIfNeeded()
+        avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
+        avatarImageView.clipsToBounds = true
+    }
+}
