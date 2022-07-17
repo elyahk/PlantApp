@@ -39,6 +39,8 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
                 cell.collectionLabel.text = "ARTICLES"
             }else if indexPath.item == 1{
                 cell.collectionLabel.text = "SPECIES"
+                cell.collectionLabel.textColor = .white
+                cell.uiView.backgroundColor = UIColor(named: "button_bg")
             }else if indexPath.item == 2{
                 cell.collectionLabel.text = "LIKES"
             }
