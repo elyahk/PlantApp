@@ -16,30 +16,44 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
 //
 //        }
 //    }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {ç
-        return 3
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0{
+            return 3
+        }else {
+            return 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = profileCollectionView.dequeueReusableCell(withReuseIdentifier: "ProfileCollectionViewCell", for: indexPath) as? ProfileCollectionViewCell else{
-            return UICollectionViewCell()
+        if indexPath.section == 0{
+            guard let cell = profileCollectionView.dequeueReusableCell(withReuseIdentifier: "ProfileCollectionViewCell", for: indexPath) as? ProfileCollectionViewCell else{
+                return UICollectionViewCell()
+            }
+            if indexPath.item == 0{
+                cell.collectionLabel.text = "ARTICLES"
+            }else if indexPath.item == 1{
+                cell.collectionLabel.text = "SPECIES"
+            }else if indexPath.item == 2{
+                cell.collectionLabel.text = "LIKES"
+            }
+            return cell
+        }else {
+            guard let cell = profileCollectionView.dequeueReusableCell(withReuseIdentifier: "ProfileCell2", for: indexPath) as? ProfileCell2 else{
+                return UICollectionViewCell()
         }
-        if indexPath.item == 0{
-            cell.collectionLabel.text = "ARTICLES"
-        }else if indexPath.item == 1{
-            cell.collectionLabel.text = "SPECIES"
-        }else if indexPath.item == 2{
-            cell.collectionLabel.text = "LIKES"
+            return cell
         }
-        cell.collectionLabel.layer.cornerRadius = 20.0
-        return cell
     }
     
     lazy var profileCollectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         view.translatesAutoresizingMaskIntoConstraints = false
         view.register(ProfileCollectionViewCell.self, forCellWithReuseIdentifier: "ProfileCollectionViewCell")
+        view.register(ProfileCell2.self, forCellWithReuseIdentifier: "ProfileCell2")
         view.dataSource = self
         view.delegate = self
         
@@ -48,15 +62,25 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     
     func createLayout() -> UICollectionViewLayout{
         
-        return UICollectionViewCompositionalLayout { sectionIndex, _ in
-            
-            let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-            item.contentInsets.trailing = 5.0
-            
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/20)), subitem: item, count: 3)
-            
-            return NSCollectionLayoutSection(group: group)
+        let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
+            if sectionIndex == 0{
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+                item.contentInsets.trailing = 5.0
+                
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/20)), subitem: item, count: 3)
+                
+                let section = NSCollectionLayoutSection(group: group)
+                return section
+            }else {
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+                
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(3/10)), subitem: item, count: 1)
+                
+                let section = NSCollectionLayoutSection(group: group)
+                return section
+            }
         }
+        return layout
     }
     
     lazy var backGroundImage: UIImageView = {
@@ -110,7 +134,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     }()
     
     
-    lazy var phoneNumberLabel: UILabel = {
+    lazy var locationNameLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = "Los Angeles, California"
@@ -132,7 +156,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     }()
     
     lazy var stackView1: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [locationIcon,phoneNumberLabel])
+        let view = UIStackView(arrangedSubviews: [locationIcon,locationNameLabel])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .horizontal
         view.spacing = 3.0
@@ -189,7 +213,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
             stackView2.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -20),
             stackView2.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 20),
             stackView2.heightAnchor.constraint(equalToConstant: 60),
-            phoneNumberLabel.widthAnchor.constraint(equalTo: stackView2.widthAnchor, multiplier: 0.7),
+            locationNameLabel.widthAnchor.constraint(equalTo: stackView2.widthAnchor, multiplier: 0.7),
             
             profileCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -23.0),
             profileCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 23.0),
