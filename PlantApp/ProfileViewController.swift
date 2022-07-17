@@ -17,14 +17,16 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
 //        }
 //    }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0{
             return 3
-        }else {
+        }else if section == 1{
             return 1
+        }else {
+            return 3
         }
     }
     
@@ -41,10 +43,22 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
                 cell.collectionLabel.text = "LIKES"
             }
             return cell
-        }else {
+        }else if indexPath.section == 1{
             guard let cell = profileCollectionView.dequeueReusableCell(withReuseIdentifier: "ProfileCell2", for: indexPath) as? ProfileCell2 else{
                 return UICollectionViewCell()
         }
+            return cell
+        }else {
+            guard let cell = profileCollectionView.dequeueReusableCell(withReuseIdentifier: "ProfilePhotoCell", for: indexPath) as? ProfilePhotoCell else{
+                return UICollectionViewCell()
+        }
+            if indexPath.item == 0{
+                cell.photo.image = UIImage(named: "flower_1")
+            }else if indexPath.item == 1{
+                cell.photo.image = UIImage(named: "flower_2")
+            }else{
+                cell.photo.image = UIImage(named: "flower_3")
+            }
             return cell
         }
     }
@@ -54,6 +68,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         view.translatesAutoresizingMaskIntoConstraints = false
         view.register(ProfileCollectionViewCell.self, forCellWithReuseIdentifier: "ProfileCollectionViewCell")
         view.register(ProfileCell2.self, forCellWithReuseIdentifier: "ProfileCell2")
+        view.register(ProfilePhotoCell.self, forCellWithReuseIdentifier: "ProfilePhotoCell")
         view.dataSource = self
         view.delegate = self
         
@@ -71,11 +86,23 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
                 
                 let section = NSCollectionLayoutSection(group: group)
                 return section
-            }else {
+            }else if sectionIndex == 1{
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
                 
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(3/10)), subitem: item, count: 1)
                 
+                let section = NSCollectionLayoutSection(group: group)
+                return section
+            }else {
+                let singleItem = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(1)))
+                singleItem.contentInsets = .init(top: 4.0, leading: 4.0, bottom: 4.0, trailing: 9.0)
+                let doubleItem = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/2)))
+                doubleItem.contentInsets.top = 4.0
+                doubleItem.contentInsets.leading = 20.0
+                let doubleGroup = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(1)), subitem: doubleItem, count: 2)
+                
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(13/20)), subitems: [singleItem,doubleGroup])
+                group.contentInsets = .init(top: 10.0, leading: 10.0, bottom: 10.0, trailing: 10.0)
                 let section = NSCollectionLayoutSection(group: group)
                 return section
             }
