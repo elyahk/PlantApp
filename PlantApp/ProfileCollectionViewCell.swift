@@ -29,7 +29,7 @@ class ProfileCollectionViewCell: UICollectionViewCell{
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
         view.clipsToBounds = true
-        view.layer.cornerRadius = 15.0
+        view.layer.cornerRadius = 10.0
         
         return view
     }()
@@ -52,7 +52,7 @@ class ProfileCollectionViewCell: UICollectionViewCell{
             uiView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             uiView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             uiView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            uiView.heightAnchor.constraint(equalToConstant: 25)
+            uiView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.9)
         ])
     }
     

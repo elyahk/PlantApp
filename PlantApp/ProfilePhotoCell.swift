@@ -12,8 +12,7 @@ class ProfilePhotoCell: UICollectionViewCell{
     lazy var photo: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.image = UIImage(named: "ic_userPhoto")
-        view.contentMode = .scaleAspectFill
+        view.contentMode = .scaleToFill 
         view.backgroundColor = .white
         
         return view

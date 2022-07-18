@@ -91,15 +91,19 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
             }else if sectionIndex == 1{
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
                 
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(3/10)), subitem: item, count: 1)
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(2/10)), subitem: item, count: 1)
                 
                 let section = NSCollectionLayoutSection(group: group)
                 return section
             }else {
                 let singleItem = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(1)))
+                singleItem.contentInsets.trailing = 10.0
+                singleItem.contentInsets.top = 10.0
                 let doubleItem = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/2)))
+                doubleItem.contentInsets.top = 10.0
                 let doubleGroup = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(1)), subitem: doubleItem, count: 2)
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(13/20)), subitems: [singleItem,doubleGroup])
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(14/20)), subitems: [singleItem,doubleGroup])
+                group.contentInsets = .init(top: 10.0, leading: 10.0, bottom: 10.0, trailing: 10.0)
                 let section = NSCollectionLayoutSection(group: group)
                 return section
             }
@@ -140,7 +144,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     lazy var edtIconButton: UIButton = {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setImage(UIImage(systemName: "ellipsis"), for: .normal)
+        view.setImage(UIImage(named: "kebab_menu_img"), for: .normal)
         view.tintColor = .white
         
         return view
@@ -192,6 +196,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         let view = UIStackView(arrangedSubviews: [nameLabel,stackView1])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
+        view.distribution = .fillEqually
         
         return view
     }()
@@ -228,15 +233,15 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
             edtIconButton.heightAnchor.constraint(equalToConstant: 30),
             edtIconButton.widthAnchor.constraint(equalToConstant: 30),
             
-            avatarImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5.0),
-            avatarImageView.rightAnchor.constraint(equalTo: edtIconButton.leftAnchor, constant: -110.0),
-            avatarImageView.leftAnchor.constraint(equalTo: backButton.rightAnchor, constant: 110.0),
+            avatarImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15.0),
+            avatarImageView.rightAnchor.constraint(equalTo: edtIconButton.leftAnchor, constant: -100.0),
+            avatarImageView.leftAnchor.constraint(equalTo: backButton.rightAnchor, constant: 100.0),
             avatarImageView.heightAnchor.constraint(equalTo: avatarImageView.widthAnchor),
             
-            stackView2.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor,constant: 20),
+            stackView2.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor),
             stackView2.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -20),
             stackView2.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 20),
-            stackView2.heightAnchor.constraint(equalToConstant: 60),
+            stackView2.bottomAnchor.constraint(equalTo: backGroundImage.bottomAnchor,constant: -5.0),
             locationNameLabel.widthAnchor.constraint(equalTo: stackView2.widthAnchor, multiplier: 0.7),
             
             profileCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -23.0),

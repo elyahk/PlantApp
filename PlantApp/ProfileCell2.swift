@@ -62,11 +62,20 @@ class ProfileCell2: UICollectionViewCell{
         return view
     }()
     
-    lazy var stackView2: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [collectedLabel,stackView1,dateLabel])
+    lazy var stackView3: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [dateLabel])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
-//        view.distribution = .fillEqually
+        view.spacing = 3.0
+        
+        return view
+    }()
+    
+    lazy var stackView2: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [collectedLabel,stackView1,stackView3])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .vertical
+        view.distribution = .fillEqually
         view.spacing = 3.0
         
         return view
@@ -82,13 +91,8 @@ class ProfileCell2: UICollectionViewCell{
             stackView2.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             stackView2.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             stackView2.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            collectedLabel.heightAnchor.constraint(equalToConstant: 76.0),
-            
-//            stackView1.topAnchor.constraint(equalTo: collectedLabel.bottomAnchor),
-//            stackView1.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-//            stackView1.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-//            stackView1.heightAnchor.constraint(equalToConstant: 50.0),
-            dateLabel.widthAnchor.constraint(equalTo: stackView2.widthAnchor, multiplier: 0.7),
+//            collectedLabel.heightAnchor.constraint(equalToConstant: 76.0),
+            dateLabel.leadingAnchor.constraint(equalTo: stackView3.leadingAnchor,constant: 25.0),
             alagatreLabel.heightAnchor.constraint(equalToConstant: 20.0),
             dotIcon.widthAnchor.constraint(equalToConstant: 24.0)
         ])
