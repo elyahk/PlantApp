@@ -97,14 +97,9 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
                 return section
             }else {
                 let singleItem = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(1)))
-                singleItem.contentInsets = .init(top: 4.0, leading: 4.0, bottom: 4.0, trailing: 9.0)
                 let doubleItem = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/2)))
-                doubleItem.contentInsets.top = 4.0
-                doubleItem.contentInsets.leading = 20.0
                 let doubleGroup = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(1)), subitem: doubleItem, count: 2)
-                
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(13/20)), subitems: [singleItem,doubleGroup])
-                group.contentInsets = .init(top: 10.0, leading: 10.0, bottom: 10.0, trailing: 10.0)
                 let section = NSCollectionLayoutSection(group: group)
                 return section
             }
