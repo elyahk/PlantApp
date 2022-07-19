@@ -38,7 +38,7 @@ class CustomTextField: UIView {
         return view
     }()
 
-    private lazy var lineView: UIView = {
+     lazy var lineView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemGray2
