@@ -17,7 +17,7 @@ class Test5ViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.placeholder = "Search For Plants "
         view.textColor = .black
-        view.font = .monospacedSystemFont(ofSize: 14, weight: .regular)
+        view.font = .monospacedSystemFont(ofSize: 24, weight: .regular)
         view.backgroundColor = .white
         view.layer.masksToBounds = true
         
@@ -26,9 +26,9 @@ class Test5ViewController: UIViewController {
     lazy var firstButton: UIButton = {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("1", for: .normal)
+        view.setTitle("1111", for: .normal)
         view.backgroundColor = Colors.onboardingBtnColor.color
-        view.setTitleColor(.white, for: .normal)
+        view.setImage(Images.redCactus.image, for: .normal)
 //        view.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         return view
     }()
@@ -36,7 +36,7 @@ class Test5ViewController: UIViewController {
     lazy var secondButton: UIButton = {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("2", for: .normal)
+        view.setImage(Images.mainPageflowerImage1.image, for: .normal)
         view.backgroundColor = Colors.onboardingBtnColor.color
         view.setTitleColor(.white, for: .normal)
 //        view.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
@@ -45,7 +45,7 @@ class Test5ViewController: UIViewController {
     lazy var thirdButton: UIButton = {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("3", for: .normal)
+        view.setImage(Images.circleCactus.image, for: .normal)
         view.backgroundColor = Colors.onboardingBtnColor.color
         view.setTitleColor(.white, for: .normal)
 //        view.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
@@ -55,8 +55,28 @@ class Test5ViewController: UIViewController {
     lazy var fourthButton: UIButton = {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("4", for: .normal)
+        view.setImage(Images.fatCactus.image, for: .normal)
         view.backgroundColor = Colors.onboardingBtnColor.color
+        view.setTitleColor(.white, for: .normal)
+//        view.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        return view
+    }()
+  
+    lazy var buttonStack: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [firstButton, secondButton, thirdButton , fourthButton])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .horizontal
+        view.distribution = .fillEqually
+        view.contentMode = .center
+        view.spacing = 10
+
+        return view
+    }()
+    lazy var doneButton: UIButton = {
+        let view = UIButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.setTitle("DONE !!!", for: .normal)
+        view.backgroundColor = Colors.mainTitleColor.color
         view.setTitleColor(.white, for: .normal)
 //        view.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         return view
@@ -64,10 +84,33 @@ class Test5ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupSubviews()
         // Do any additional setup after loading the view.
     }
     
+    private func setupSubviews() {
+        view.addSubview(textFiled)
+        view.addSubview(buttonStack)
+        view.addSubview(doneButton)
+
+        NSLayoutConstraint.activate([
+            textFiled.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10.0),
+            textFiled.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10.0),
+            textFiled.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 10),
+            
+            buttonStack.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10.0),
+            buttonStack.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10.0),
+            buttonStack.topAnchor.constraint(equalTo: textFiled.bottomAnchor,constant: 20),
+            
+            doneButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10.0),
+            doneButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10.0),
+            doneButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: 20),
+           
+            doneButton.heightAnchor.constraint(equalToConstant: 150),
+            textFiled.heightAnchor.constraint(equalToConstant: 100),
+            firstButton.heightAnchor.constraint(equalToConstant: 100),
+        ])
+    }
 
   
 
