@@ -14,14 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow()
         window?.makeKeyAndVisible()
-
-        if UserDefaults.standard.bool(forKey: "IS_USER_LOGIN") {
-            let controller = TabbarController()
-            window?.rootViewController = controller
-        } else {
-            let navigationController = UINavigationController(rootViewController: OnboardingViewController())
-            window?.rootViewController = navigationController
-        }
+        window?.rootViewController =  ArticlesViewController()
+//        if UserDefaults.standard.bool(forKey: "IS_USER_LOGIN") {
+//            let controller = TabbarController()
+//            window?.rootViewController = controller
+//        } else {
+//            let navigationController = UINavigationController(rootViewController: OnboardingViewController())
+//            window?.rootViewController = navigationController
+//        }
 
         return true
     }

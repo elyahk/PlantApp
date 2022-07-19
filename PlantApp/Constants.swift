@@ -28,7 +28,10 @@ enum Images {
     case fatCactus
     case circleCactus
     case ic_check_green
-
+    case articlesTomatoImage
+    case girlArticlesImage
+    case vectorAcriclesImage
+    case heartAcriclesImage
     var image: UIImage? {
         switch self {
         case .identifyPageImage: return  UIImage(named: "ic_onboarding_identify")
@@ -51,6 +54,10 @@ enum Images {
         case .fatCactus: return UIImage(named: "fat_cactus_img")
         case .circleCactus: return UIImage(named: "circle_cactus_img")
         case .ic_check_green: return UIImage(named: "ic_check_green")
+        case .articlesTomatoImage: return UIImage(named: "Rectangle")
+        case .girlArticlesImage: return UIImage(named: "girl_image")
+        case .vectorAcriclesImage: return UIImage(named: "vector")
+        case .heartAcriclesImage: return UIImage(named: "heart")
         }
     }
 }
@@ -61,7 +68,7 @@ enum Colors {
     case onboardingBtnColor
     case mainSubtitleColor
     case spaciesPagetextColor
-
+    case dateColor
     var color: UIColor? {
         switch self {
             case .mainBgColor: return UIColor(named: "main_bg")
@@ -69,6 +76,7 @@ enum Colors {
             case .onboardingBtnColor: return UIColor(named: "onboarding_btn_color")
             case .mainSubtitleColor: return UIColor(named: "main_subtitle_color")
             case .spaciesPagetextColor: return  UIColor(named: "speciesPage_textColor")
+            case .dateColor: return  UIColor(named: "dateColor")
         }
     }
 }

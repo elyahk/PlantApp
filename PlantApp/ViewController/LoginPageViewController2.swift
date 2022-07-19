@@ -2,7 +2,7 @@
 //  LoginPageViewController2.swift
 //  PlantApp
 //
-//  Created by user on 07/07/22.
+//  Created by Bekzod Qahhorov on 07/07/22.
 //
 
 import UIKit
@@ -240,7 +240,7 @@ class LoginPageViewController2: UIViewController {
 
             let controller = TabbarController()
             navigationController?.pushViewController(controller, animated: true)
-
+            navigationController?.pushViewController(ArticlesViewController(), animated: true)
         } else {
             showAlert()
         }

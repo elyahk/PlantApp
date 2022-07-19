@@ -2,7 +2,7 @@
 //  MainCell.swift
 //  PlantApp
 //
-//  Created by user on 13/07/22.
+//  Created by Bekzod Qahhorovon 13/07/22.
 //
 
 import UIKit

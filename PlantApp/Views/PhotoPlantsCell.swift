@@ -2,7 +2,7 @@
 //  PhotoPlantsCell.swift
 //  PlantApp
 //
-//  Created by user on 13/07/22.
+//  Created by Bekzod Qahhorov on 13/07/22.
 //
 
 import UIKit
