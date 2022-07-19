@@ -36,6 +36,8 @@
 		80AC9F9C287A1D06006BC246 /* ListPlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9F9B287A1D06006BC246 /* ListPlantsViewController.swift */; };
 		80AC9FA22880BA91006BC246 /* ListPlantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC9FA12880BA91006BC246 /* ListPlantsTableViewCell.swift */; };
 		CE877763288676F300A3E098 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE877762288676F300A3E098 /* TabbarController.swift */; };
+		CEC35B672886F7BA00ADF481 /* Test4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC35B662886F7BA00ADF481 /* Test4ViewController.swift */; };
+		CEC35B692886F9F100ADF481 /* Test5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC35B682886F9F100ADF481 /* Test5ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		80AC9F9B287A1D06006BC246 /* ListPlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlantsViewController.swift; sourceTree = "<group>"; };
 		80AC9FA12880BA91006BC246 /* ListPlantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlantsTableViewCell.swift; sourceTree = "<group>"; };
 		CE877762288676F300A3E098 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		CEC35B662886F7BA00ADF481 /* Test4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test4ViewController.swift; sourceTree = "<group>"; };
+		CEC35B682886F9F100ADF481 /* Test5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test5ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,12 +136,12 @@
 				6EA7F8F92881C7FF00EA6186 /* MainViewController.swift */,
 				2C1A86E128749AF4009600F9 /* OnboardingViewController.swift */,
 				18A906D128758C150043E67D /* FirstScreenViewController.swift */,
+				CEC35B682886F9F100ADF481 /* Test5ViewController.swift */,
+				CEC35B662886F7BA00ADF481 /* Test4ViewController.swift */,
 				6EA7F9052881C83500EA6186 /* LoginPageViewController2.swift */,
 				80AC9F9728788FD8006BC246 /* SpeciesViewController.swift */,
 				80AC9F9B287A1D06006BC246 /* ListPlantsViewController.swift */,
-
 				CE877762288676F300A3E098 /* TabbarController.swift */,
-
 				6EEA108A288333A000026F09 /* TestViewController.swift */,
 			);
 			path = ViewController;
@@ -255,9 +259,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC35B692886F9F100ADF481 /* Test5ViewController.swift in Sources */,
 				80AC9F9A2878B2DE006BC246 /* SpeciesTableViewCell.swift in Sources */,
 				6EEA108B288333A000026F09 /* TestViewController.swift in Sources */,
 				2C1A86E228749AF4009600F9 /* OnboardingViewController.swift in Sources */,
+				CEC35B672886F7BA00ADF481 /* Test4ViewController.swift in Sources */,
 				185B52C42882439F00F0ABF6 /* DetailArticles.swift in Sources */,
 				80AC9F9C287A1D06006BC246 /* ListPlantsViewController.swift in Sources */,
 				80AC9F9C287A1D06006BC246 /* ListPlantsViewController.swift in Sources */,

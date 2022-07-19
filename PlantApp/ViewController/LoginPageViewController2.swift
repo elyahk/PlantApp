@@ -210,7 +210,7 @@ class LoginPageViewController2: UIViewController {
             mainStack.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor,constant: 15),
             mainStack.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 23),
             mainStack.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -23),
-            mainStack.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.40),
+            mainStack.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.34),
             nameTextFieldStack.topAnchor.constraint(equalTo: labelsStack.bottomAnchor, constant: 42),
             passwordTextFieldStack.topAnchor.constraint(equalTo: nameTextFieldStack.bottomAnchor, constant: 42), loginButton.topAnchor.constraint(equalTo: mainStack.bottomAnchor,constant: 40),
             loginButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 23),

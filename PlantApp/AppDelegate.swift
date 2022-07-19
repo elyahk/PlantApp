@@ -15,14 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
 
-        if UserDefaults.standard.bool(forKey: "IS_USER_LOGIN") {
-            let controller = TabbarController()
-            window?.rootViewController = controller
-        } else {
-            let navigationController = UINavigationController(rootViewController: OnboardingViewController())
-            window?.rootViewController = navigationController
-        }
-
+//        if UserDefaults.standard.bool(forKey: "IS_USER_LOGIN") {
+//            let controller = TabbarController()
+//            window?.rootViewController = controller
+//        } else {
+//            let navigationController = UINavigationController(rootViewController: OnboardingViewController())
+//            window?.rootViewController = navigationController
+//        }
+        let navigationController = UINavigationController(rootViewController: Test4ViewController())
+                   window?.rootViewController = navigationController
+    
         return true
     }
 }
