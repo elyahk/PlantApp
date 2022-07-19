@@ -129,7 +129,7 @@ extension ListPlantsViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          
-        let articlesViewController = ArticlesViewController()
+        let articlesViewController = ArticlesTableViewController()
         articlesViewController.modalPresentationStyle = .fullScreen
         articlesViewController.modalTransitionStyle = .crossDissolve
         present(articlesViewController, animated: true)
